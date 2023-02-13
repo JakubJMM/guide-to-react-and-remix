@@ -25,9 +25,9 @@ const Remix = () => {
           <div>
             <Link
               className="mb-2 text-sm text-neutral-300 hover:text-white"
-              to="routing-in-remix/adding-a-route"
+              to="routing-in-remix/adding-a-new-page"
             >
-              Adding a route
+              Adding a new page
             </Link>
           </div>
         </section>
