@@ -1,4 +1,12 @@
+import { LoaderArgs } from "@remix-run/node";
 import { Link, Outlet } from "@remix-run/react";
+import { requireUserId } from "~/session.server";
+
+export const loader = async ({ request }: LoaderArgs) => {
+  await requireUserId(request);
+
+  return null;
+};
 
 const Remix = () => {
   return (
