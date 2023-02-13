@@ -12,6 +12,7 @@ import {
   GiAchievement,
 } from "react-icons/gi";
 import HamburgerButton from "./HamburgerButton";
+import remixIcon from "~/assets/svg/remix-logo.svg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -64,6 +65,12 @@ const Navbar = () => {
             <GiChecklist className="fill-white" />
           </NavItemIcon>
           ToDo App
+        </NavbarLink>
+        <NavbarLink to="/remix">
+          <NavItemIcon>
+            <img src={remixIcon} className="h-auto w-3" alt="Remix icon" />
+          </NavItemIcon>
+          Remix
         </NavbarLink>
       </div>
     </header>
