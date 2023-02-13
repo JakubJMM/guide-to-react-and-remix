@@ -12,7 +12,7 @@ import Screenshot from "~/components/Screenshot";
 import AddAllMembershipsAnswer from "./AddAllMembershipsAnswer";
 
 const AddBasicMembershipAnswer = () => {
-  const [isShowingAnswer, setIsShowingAnswer] = useState(true);
+  const [isShowingAnswer, setIsShowingAnswer] = useState(false);
 
   const handleShowAllMembershipsAnswer = () => {
     setIsShowingAnswer(true);

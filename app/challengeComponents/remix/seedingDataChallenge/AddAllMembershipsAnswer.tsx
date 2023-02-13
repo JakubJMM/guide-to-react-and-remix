@@ -1,4 +1,4 @@
-import { FaArrowAltCircleRight } from "react-icons/fa";
+import { ArrowRightCircle } from "react-feather";
 import { addAllMembershipsSnippet } from "~/assets/codeSnippets/addingAModel/seedingDataSnippets";
 import CodeBlock from "~/components/CodeBlock";
 import Heading from "~/components/Heading";
@@ -30,7 +30,7 @@ const AddAllMembershipsAnswer = () => {
           darkMode
         >
           Next: Associate users with memberships{" "}
-          <FaArrowAltCircleRight className="ml-4 fill-blue-500 group-hover:fill-blue-400" />
+          <ArrowRightCircle className="ml-4 group-hover:stroke-blue-400" />
         </InternalStyledLink>
       </div>
     </>

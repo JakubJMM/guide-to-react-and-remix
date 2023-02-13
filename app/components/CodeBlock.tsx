@@ -1,8 +1,7 @@
-import { log } from "console";
 import styles from "node_modules/react-syntax-highlighter/dist/cjs/styles/hljs/stackoverflow-dark.js";
 import { useEffect, useState } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
-import { FaCopy } from "react-icons/fa";
+import { Copy } from "react-feather";
 import SyntaxHighlighter from "react-syntax-highlighter";
 
 interface CodeBlockProps {
@@ -58,9 +57,9 @@ const CodeBlock = ({
               filePath ? "top-7" : "top-1"
             }`}
           >
-            <FaCopy
+            <Copy
               type="button"
-              className={`fill-neutral-400 group-hover:fill-neutral-800`}
+              className={`stroke-neutral-400 group-hover:stroke-neutral-800`}
               onClick={handleCopy}
             />
           </span>
