@@ -21,6 +21,7 @@ const CreatingATable = () => {
         to the end of{" "}
         <InlineMonoType darkMode>prisma/schema.prisma</InlineMonoType>:
       </Paragraph>
+
       <div className="my-6">
         <CodeBlock
           filePath="prisma/schema.prisma"
@@ -29,6 +30,7 @@ const CreatingATable = () => {
           snippet={newMemberShipSnippet}
         />
       </div>
+
       <Paragraph darkMode>
         We will also need to update the{" "}
         <InlineMonoType darkMode>User</InlineMonoType> model towards the top of
@@ -36,14 +38,17 @@ const CreatingATable = () => {
         <InlineMonoType darkMode>User</InlineMonoType> model code with that
         shown below:
       </Paragraph>
+
       <div className="my-6">
         <CodeBlock
           filePath="prisma/schema.prisma"
           language="prisma"
           showLineNumbers={true}
           snippet={updatedUserModelSnippet}
+          highlightAdditionalLines={[10, 11]}
         />
       </div>
+
       <Paragraph darkMode>
         This defines a two-way relationship: a{" "}
         <InlineMonoType darkMode>User</InlineMonoType> can optionally have one{" "}
@@ -55,9 +60,11 @@ const CreatingATable = () => {
         Once pasted into your schema file, run the following command in your
         terminal push your changes to the database:
       </Paragraph>
+
       <div className="my-6">
         <CodeBlock language="shell" snippet="npx prisma db push" />
       </div>
+
       <div className="mt-12 mb-6">
         <InternalStyledLink
           to="/remix/prisma/adding-a-prisma-model/view-the-database"
