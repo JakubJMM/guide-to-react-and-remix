@@ -1,57 +1,37 @@
-import { Link, Outlet } from "@remix-run/react";
+import { Outlet } from "@remix-run/react";
 import Heading from "~/components/Heading";
-
-const newMemberShipSnippet = `model Membership {
-  id          String @id @default(cuid())
-  level       String
-  description String
-  price       String
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  userId String @unique
-}`;
+import LessonLink from "~/components/LessonLink";
 
 const AddingAModal = () => {
   return (
     <>
-      <Heading level="h1">Adding a Model</Heading>
-      <div className="flex flex-wrap">
-        <Link
-          className="mr-2 mb-2 flex items-center justify-center rounded-2xl bg-neutral-200 px-3 py-2 text-center text-xs uppercase leading-relaxed tracking-wide text-neutral-900 last-of-type:mr-0 hover:bg-white"
-          to="creating-a-table"
-        >
+      <Heading level="h1" className="text-center">
+        Adding a Model
+      </Heading>
+      <div className="flex flex-wrap justify-around">
+        <LessonLink to="creating-a-table" connectTo="view-the-database">
           Create a table
-        </Link>
-        <Link
-          className="mr-2 mb-2 flex items-center justify-center rounded-2xl bg-neutral-200 px-3 py-2 text-center text-xs uppercase leading-relaxed tracking-wide text-neutral-900 hover:bg-white"
-          to="view-the-database"
-        >
+        </LessonLink>
+        <LessonLink to="view-the-database" connectTo="seeding-data">
           View the Database
-        </Link>
-        <Link
-          className="mr-2 mb-2 flex items-center justify-center rounded-2xl bg-neutral-200 px-3 py-2 text-center text-xs uppercase leading-relaxed tracking-wide text-neutral-900 hover:bg-white"
-          to="seeding-data"
-        >
+        </LessonLink>
+        <LessonLink to="seeding-data" connectTo="seeding-data-challenge">
           Seeding data
-        </Link>
-        <Link
-          className="mr-2 mb-2 flex items-center justify-center rounded-2xl bg-neutral-200 px-3 py-2 text-center text-xs uppercase leading-relaxed tracking-wide text-neutral-900 hover:bg-white"
+        </LessonLink>
+        <LessonLink
           to="seeding-data-challenge"
+          connectTo="associate-users-with-memberships"
         >
           Seeding: Challenge
-        </Link>
-        <Link
-          className="mr-2 mb-2 flex items-center justify-center rounded-2xl bg-neutral-200 px-3 py-2 text-center text-xs uppercase leading-relaxed tracking-wide text-neutral-900 hover:bg-white"
-          to="associate-users-with-memberships"
-        >
+        </LessonLink>
+        <LessonLink to="associate-users-with-memberships">
           Associate users and memberships
-        </Link>
+        </LessonLink>
       </div>
       <div>
-        <Outlet />
+        <div className="mx-auto max-w-3xl ">
+          <Outlet />
+        </div>
       </div>
     </>
   );
