@@ -42,9 +42,9 @@ const SeedingData = () => {
       <Paragraph darkMode>
         It was actually generated automatically when you installed the Remix
         Indie Stack on your machine, and came from the file at{" "}
-        <InlineMonoType darkMode>prisma/seed.ts</InlineMonoType>. Open the file
-        now and take a look inside:
+        <InlineMonoType darkMode>prisma/seed.ts</InlineMonoType>.
       </Paragraph>
+      <Paragraph darkMode>Open the file now and take a look inside:</Paragraph>
       <div className="my-6">
         <CodeBlock
           snippet={originalCreateUserSnippetComplete}
@@ -98,7 +98,7 @@ const SeedingData = () => {
             .
           </Paragraph>
           <Paragraph darkMode>
-            Finally, we use all this information to create a new user on the{" "}
+            Finally, we use all this information to create a new record on the{" "}
             <InlineMonoType darkMode>User</InlineMonoType> table via Prisma's{" "}
             <InlineMonoType darkMode>create</InlineMonoType> method:
           </Paragraph>

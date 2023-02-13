@@ -41,7 +41,7 @@ const ViewTheDatabase = () => {
         Let's fix this in the{" "}
         <InternalStyledLink
           to="/remix/prisma/adding-a-prisma-model/seeding-data"
-          className="text-2xl"
+          className="text-[1.5rem]"
         >
           next step
         </InternalStyledLink>{" "}

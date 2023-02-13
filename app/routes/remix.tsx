@@ -25,9 +25,7 @@ const Remix = () => {
         </section>
       </aside>
       <main className="h-full w-3/4 py-6">
-        <div className="mx-auto max-w-3xl">
-          <Outlet />
-        </div>
+        <Outlet />
       </main>
     </div>
   );
