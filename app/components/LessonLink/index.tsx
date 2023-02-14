@@ -38,7 +38,7 @@ const LessonLink = ({
   return (
     <>
       <Link
-        className={`mr-2 mb-2 flex items-center justify-center rounded-2xl px-3 py-2 text-center text-xs uppercase leading-relaxed tracking-wide text-neutral-900 ${
+        className={`m-2 flex items-center justify-center rounded-2xl px-3 py-2 text-center text-xs uppercase leading-relaxed tracking-wide text-neutral-900 ${
           isOnCurrentRoute ? "bg-white" : "bg-neutral-400"
         } last-of-type:mr-0 hover:bg-white ${className}`}
         to={to}
