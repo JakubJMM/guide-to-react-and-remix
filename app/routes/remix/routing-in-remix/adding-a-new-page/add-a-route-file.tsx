@@ -1,10 +1,13 @@
+import addMembershipsRouteImage from "~/assets/add-memberships-route.png";
+import { basicMembershipSnippet } from "~/assets/codeSnippets/addMembershipsRoute/membershipRouteSnippets";
+import membershipsStartPage from "~/assets/jpg/membership-page-start.jpg";
+import CodeBlock from "~/components/CodeBlock";
+import ExternalLink from "~/components/ExternalLink";
 import Heading from "~/components/Heading";
 import InlineMonoType from "~/components/InlineMonoType";
+import NextLessonLink from "~/components/NextLessonLink";
 import Paragraph from "~/components/Paragraph";
-import addMembershipsRouteImage from "~/assets/add-memberships-route.png";
 import Screenshot from "~/components/Screenshot";
-import CodeBlock from "~/components/CodeBlock";
-import { basicMembershipSnippet } from "~/assets/codeSnippets/addMembershipsRoute/membershipRouteSnippets";
 
 const AddARouteFile = () => {
   return (
@@ -29,11 +32,33 @@ const AddARouteFile = () => {
       <Paragraph darkMode>
         Copy and paste the code below into this new file:
       </Paragraph>
-      <CodeBlock
-        snippet={basicMembershipSnippet}
-        showLineNumbers
-        filePath="app/routes/memberships.tsx"
-      />
+      <div className="my-6">
+        <CodeBlock
+          snippet={basicMembershipSnippet}
+          showLineNumbers
+          filePath="app/routes/memberships.tsx"
+        />
+      </div>
+      <Paragraph darkMode>
+        Head over to{" "}
+        <ExternalLink to="http://localhost:3000/memberships">
+          http://localhost:3000/memberships
+        </ExternalLink>
+        . You should see the page below:
+      </Paragraph>
+      <div className="my-6">
+        <Screenshot
+          src={membershipsStartPage}
+          alt="The memberships starting page"
+        />
+      </div>
+      <Paragraph darkMode>
+        This is great, but uses a lot of repeated code to create the membership
+        cards. Let's fix that in the next lesson.
+      </Paragraph>
+      <NextLessonLink to="importing-components">
+        Next: Create a membership card component
+      </NextLessonLink>
     </>
   );
 };

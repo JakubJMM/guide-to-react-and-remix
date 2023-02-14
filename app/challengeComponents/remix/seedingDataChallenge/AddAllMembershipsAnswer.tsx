@@ -1,8 +1,7 @@
-import { ArrowRightCircle } from "react-feather";
 import { addAllMembershipsSnippet } from "~/assets/codeSnippets/addingAModel/seedingDataSnippets";
 import CodeBlock from "~/components/CodeBlock";
 import Heading from "~/components/Heading";
-import InternalStyledLink from "~/components/InternalStyledLink";
+import NextLessonLink from "~/components/NextLessonLink";
 import Paragraph from "~/components/Paragraph";
 
 const AddAllMembershipsAnswer = () => {
@@ -24,14 +23,9 @@ const AddAllMembershipsAnswer = () => {
       </Paragraph>
 
       <div className="mt-12 mb-6">
-        <InternalStyledLink
-          to="/remix/prisma/adding-a-prisma-model/associate-users-with-memberships"
-          className="group flex items-center justify-end text-2xl"
-          darkMode
-        >
-          Next: Associate users with memberships{" "}
-          <ArrowRightCircle className="ml-4 group-hover:stroke-blue-400" />
-        </InternalStyledLink>
+        <NextLessonLink to="/remix/prisma/adding-a-prisma-model/associate-users-with-memberships">
+          Next: Associate users with memberships
+        </NextLessonLink>
       </div>
     </>
   );
