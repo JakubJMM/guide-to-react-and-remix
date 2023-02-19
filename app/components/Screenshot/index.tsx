@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface ScreenshotProps {
   src: string;
   alt: string;
+  challengeBlock?: boolean;
 }
 
 interface ImageModalProps {
@@ -24,8 +25,12 @@ const ImageModal = ({ alt, handleCloseModal, src }: ImageModalProps) => {
   );
 };
 
-const Screenshot = ({ src, alt }: ScreenshotProps) => {
+const Screenshot = ({ src, alt, challengeBlock = false }: ScreenshotProps) => {
   const [modalIsShowing, setModalIsShowing] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = modalIsShowing ? "hidden" : "auto";
+  }, [modalIsShowing]);
 
   const handleOpenModal = () => {
     setModalIsShowing(true);
@@ -41,7 +46,11 @@ const Screenshot = ({ src, alt }: ScreenshotProps) => {
         <ImageModal alt={alt} handleCloseModal={handleCloseModal} src={src} />
       ) : null}
       <div
-        className="flex max-w-xl cursor-pointer items-center justify-center border border-neutral-500 bg-neutral-700 p-4 hover:bg-neutral-600"
+        className={`flex max-w-xl cursor-pointer items-center justify-center border border-neutral-500 bg-neutral-700 p-4 hover:bg-neutral-600 ${
+          challengeBlock
+            ? "border-opacity-50 bg-neutral-900 bg-opacity-50 hover:bg-neutral-800 hover:bg-opacity-50"
+            : ""
+        }`}
         onClick={handleOpenModal}
       >
         <img src={src} alt={alt} />
