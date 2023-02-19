@@ -2,18 +2,20 @@ type InlineMonoTypeProps = {
   children: string;
   className?: string;
   darkMode?: boolean;
+  challengeBlock?: boolean;
 };
 
 const InlineMonoType = ({
   darkMode = false,
   children,
   className = "",
+  challengeBlock = false,
 }: InlineMonoTypeProps) => {
   return (
     <span
-      className={`rounded bg-slate-900 py-2 px-3 font-mono text-lg text-white ${
+      className={`rounded bg-slate-900 py-1 px-2 font-mono text-lg text-white ${
         darkMode ? "bg-neutral-700" : ""
-      } ${className}`}
+      } ${challengeBlock ? "bg-neutral-900 bg-opacity-50" : ""} ${className}`}
     >
       {children}
     </span>
