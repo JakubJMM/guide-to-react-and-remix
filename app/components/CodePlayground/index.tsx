@@ -8,6 +8,7 @@ import {
 import { monokaiPro } from "@codesandbox/sandpack-themes";
 import { SandpackTheme } from "@codesandbox/sandpack-themes/dist/types/types";
 import LocalStorageCodeEditor from "./LocalStorageCodeEditor";
+import ResetCodeBtn from "./ResetCodeBtn";
 import SandpackForkBtn from "./SandpackForkBtn";
 
 interface CodeSandboxProps {
@@ -55,10 +56,13 @@ const CodePlayground = ({
           <SandpackLayout>
             <div>
               <div className="flex items-center justify-between overflow-hidden rounded-t-xl px-2 py-1">
-                <span className="text-xs font-bold uppercase text-neutral-400">
+                <span className="mx-2 text-xs font-bold uppercase text-neutral-400">
                   {title}
                 </span>
-                <SandpackForkBtn />
+                <div className="flex">
+                  <ResetCodeBtn files={files} />
+                  <SandpackForkBtn />
+                </div>
               </div>
 
               <div className="flex">
