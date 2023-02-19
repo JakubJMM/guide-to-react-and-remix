@@ -1,8 +1,20 @@
-export const basicMembershipSnippet = `export default function Memberships() {
+export const basicMembershipSnippet = `interface MembershipCardProps {
+  level: string;
+  description: string;
+  price: string;
+}
+
+function MembershipCard({ level, description, price }: MembershipCardProps) {
+  return (
+    <>{/* // Replace this line of code with your MembershipCard component code */}</>
+  );
+}
+
+export default function Memberships() {
   return (
     <div className="min-h-screen bg-yellow-100 p-4">
       <h1 className="mb-4 text-center font-serif text-4xl font-extrabold text-red-900">
-        Memberships
+        Membership Page
       </h1>
       <ul className="mx-auto max-w-xl p-4">
         <li className="mb-4 rounded-lg bg-white p-4 text-center shadow-lg transition-all last-of-type:mb-0 hover:scale-105 hover:cursor-pointer">
