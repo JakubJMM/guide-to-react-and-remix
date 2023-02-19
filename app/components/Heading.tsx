@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 
 interface HeadingProps {
+  isCentre?: boolean;
   children: ReactNode;
   className?: string;
   level: "h1" | "h2" | "h3";
@@ -8,12 +9,19 @@ interface HeadingProps {
 
 const headingBaseStyles = "mb-12 leading-loose tracking-wide text-white";
 
-const Heading = ({ children, className = "", level }: HeadingProps) => {
+const Heading = ({
+  children,
+  className = "",
+  isCentre = false,
+  level,
+}: HeadingProps) => {
   switch (level) {
     case "h1":
       return (
         <h1
-          className={`${headingBaseStyles} mt-14 text-left text-4xl font-extrabold ${className}`}
+          className={`${headingBaseStyles} mt-14 ${
+            isCentre ? "text-center" : "text-left"
+          } text-4xl font-extrabold ${className}`}
         >
           {children}
         </h1>
@@ -21,7 +29,9 @@ const Heading = ({ children, className = "", level }: HeadingProps) => {
     case "h2":
       return (
         <h2
-          className={`${headingBaseStyles} mt-12 text-left text-2xl font-bold ${className}`}
+          className={`${headingBaseStyles} mt-12 ${
+            isCentre ? "text-center" : "text-left"
+          } text-2xl font-bold ${className}`}
         >
           {children}
         </h2>
@@ -29,7 +39,9 @@ const Heading = ({ children, className = "", level }: HeadingProps) => {
     case "h3":
       return (
         <h3
-          className={`${headingBaseStyles} text-1xl mt-10 text-left font-bold ${className}`}
+          className={`${headingBaseStyles} text-1xl mt-10 ${
+            isCentre ? "text-center" : "text-left"
+          } font-bold ${className}`}
         >
           {children}
         </h3>
