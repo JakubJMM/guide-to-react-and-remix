@@ -12,7 +12,9 @@ import Screenshot from "~/components/Screenshot";
 const AddARouteFile = () => {
   return (
     <>
-      <Heading level="h2">Add a route file</Heading>
+      <Heading isCentre level="h2">
+        Add a route file
+      </Heading>
       <div className="lg:flex">
         <div className="flex flex-col justify-center p-2">
           <Paragraph darkMode>Adding a new page is easy in Remix.</Paragraph>
@@ -40,7 +42,8 @@ const AddARouteFile = () => {
         />
       </div>
       <Paragraph darkMode>
-        Head over to{" "}
+        Save your file, start your server with{" "}
+        <InlineMonoType darkMode>npm run dev</InlineMonoType> and head over to{" "}
         <ExternalLink to="http://localhost:3000/memberships">
           http://localhost:3000/memberships
         </ExternalLink>
@@ -56,7 +59,7 @@ const AddARouteFile = () => {
         This is great, but uses a lot of repeated code to create the membership
         cards. Let's fix that in the next lesson.
       </Paragraph>
-      <NextLessonLink to="importing-components">
+      <NextLessonLink to="/remix/routing-in-remix/adding-a-new-page/importing-components">
         Next: Create a membership card component
       </NextLessonLink>
     </>

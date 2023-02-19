@@ -1,6 +1,6 @@
 export const basicMembershipSnippet = `export default function Memberships() {
   return (
-    <div className="min-h-screen bg-amber-200 p-4">
+    <div className="min-h-screen bg-yellow-100 p-4">
       <h1 className="mb-4 text-center font-serif text-4xl font-extrabold text-red-900">
         Memberships
       </h1>

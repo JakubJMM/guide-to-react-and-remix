@@ -2,11 +2,7 @@ import { Outlet } from "@remix-run/react";
 import Heading from "~/components/Heading";
 import LessonLink from "~/components/LessonLink";
 
-interface AddingANewPageProps {
-  children: React.ReactNode;
-}
-
-const AddingANewPage = ({ children }: AddingANewPageProps) => {
+const AddingANewPage = () => {
   return (
     <>
       <Heading level="h1" className="text-center">
@@ -22,7 +18,7 @@ const AddingANewPage = ({ children }: AddingANewPageProps) => {
         <LessonLink to="nested-routes">Nested routes</LessonLink>
       </div>
       <div>
-        <div className="mx-auto max-w-3xl ">
+        <div className="px-6">
           <Outlet />
         </div>
       </div>
