@@ -8,14 +8,11 @@ const AddingANewPage = () => {
       <Heading level="h1" className="text-center">
         Adding a New Page
       </Heading>
-      <div className="flex flex-wrap justify-around">
+      <div className="flex flex-wrap justify-around lg:px-24">
         <LessonLink to="add-a-route-file" connectTo="importing-components">
           Add a route file
         </LessonLink>
-        <LessonLink to="importing-components" connectTo="nested-routes">
-          Importing Components
-        </LessonLink>
-        <LessonLink to="nested-routes">Nested routes</LessonLink>
+        <LessonLink to="importing-components">Importing Components</LessonLink>
       </div>
       <div>
         <div className="px-6">

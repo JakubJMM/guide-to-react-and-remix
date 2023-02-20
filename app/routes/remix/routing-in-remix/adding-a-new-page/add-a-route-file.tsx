@@ -1,3 +1,4 @@
+import { Link } from "@remix-run/react";
 import addMembershipsRouteImage from "~/assets/add-memberships-route.png";
 import { basicMembershipSnippet } from "~/assets/codeSnippets/addMembershipsRoute/membershipRouteSnippets";
 import membershipsStartPage from "~/assets/jpg/membership-page-start.jpg";
@@ -16,15 +17,38 @@ const AddARouteFile = () => {
         Add a route file
       </Heading>
       <div className="lg:flex">
-        <div className="flex flex-col justify-center p-2">
+        <div className="flex flex-col items-start justify-center p-2 lg:w-1/2">
           <Paragraph darkMode>Adding a new page is easy in Remix.</Paragraph>
           <Paragraph darkMode>
             Inside the <InlineMonoType darkMode>app/routes</InlineMonoType>{" "}
             folder in your project, create a new file whose filename matches the
-            new route you want to create. Click the screenshot opposite to see.
+            new route you want to create.
           </Paragraph>
+          <Paragraph darkMode>
+            So if you wanted to create a page on your website that had the URL{" "}
+            <InlineMonoType darkMode>
+              http://localhost:3000/my-new-route
+            </InlineMonoType>
+            , you would create a new file at{" "}
+            <InlineMonoType darkMode>
+              app/routes/my-new-route.tsx
+            </InlineMonoType>
+            .{" "}
+          </Paragraph>
+          <Paragraph darkMode>
+            In this case, we want to create a new route that will be reached at{" "}
+            <Link to="/memberships">
+              <InlineMonoType darkMode>
+                http://localhost:3000/memberships
+              </InlineMonoType>
+            </Link>
+            , so we will create a file at{" "}
+            <InlineMonoType darkMode>app/routes/memberships.tsx</InlineMonoType>
+            .{" "}
+          </Paragraph>
+          <Paragraph darkMode>Click the screenshot opposite to see.</Paragraph>
         </div>
-        <div className="p-2s h-full">
+        <div className="h-full p-6 lg:w-1/2">
           <Screenshot
             src={addMembershipsRouteImage}
             alt="Adding a new membership route file"
