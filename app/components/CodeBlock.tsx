@@ -80,6 +80,7 @@ const CodeBlock = ({
             highlightAdditionalLines.forEach((highlightLineNumber) => {
               if (highlightLineNumber === lineNumber) {
                 style.backgroundColor = "rgba(6, 78, 59, 0.5)";
+                style.borderLeft = "4px solid rgb(34 197 94)";
               }
 
               return { style };
@@ -89,6 +90,7 @@ const CodeBlock = ({
             highlightSubtractedLines.forEach((highlightLineNumber) => {
               if (highlightLineNumber === lineNumber) {
                 style.backgroundColor = "rgba(127, 29, 29, 0.5)";
+                style.borderLeft = "4px solid rgb(239 68 68)";
               }
 
               return { style };
