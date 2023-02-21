@@ -35,3 +35,17 @@ export const navbarStarterCodeSnippet = `const Navbar = () => {
 };
 
 export default Navbar;`;
+
+export const addUseOptionalUserToNavbar = `const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const user = useOptionalUser();
+  console.log({ user });
+
+  return (
+    <header className="bg-neutral-800 md:flex md:justify-between">
+    [...rest of Navbar code here...]
+    </header>
+  );
+};
+
+export default Navbar;`;

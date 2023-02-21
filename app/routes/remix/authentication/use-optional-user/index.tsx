@@ -1,9 +1,13 @@
-import { navbarStarterCodeSnippet } from "~/assets/codeSnippets/authentication/useOptionalUserSnippets";
+import { addUseOptionalUserToNavbar } from "~/assets/codeSnippets/authentication/useOptionalUserSnippets";
+import optionalUserConsoleLogSignedIn from "~/assets/optional-user-console-log-signed-in.png";
+import optionalUserConsoleLogUndefined from "~/assets/optional-user-console-log-undefined.png";
 import CodeBlock from "~/components/CodeBlock";
 import ExternalLink from "~/components/ExternalLink";
 import Heading from "~/components/Heading";
 import InlineMonoType from "~/components/InlineMonoType";
+import NextLessonLink from "~/components/NextLessonLink";
 import Paragraph from "~/components/Paragraph";
+import Screenshot from "~/components/Screenshot";
 
 const UseOptionalUser = () => {
   return (
@@ -24,23 +28,87 @@ const UseOptionalUser = () => {
         <ExternalLink to="https://beta.reactjs.org/learn/reusing-logic-with-custom-hooks">
           hook
         </ExternalLink>{" "}
-        that allows you to do just this.
+        that allows you to do just this. Let's use it now.
       </Paragraph>
+
+      <Heading isCentre level="h3">
+        Updating the Navbar
+      </Heading>
       <Paragraph darkMode>
         Inside this project you will find a Navbar component at{" "}
         <InlineMonoType darkMode>
           app/components/Navbar/index.tsx
-        </InlineMonoType>{" "}
-        which displays the navigation bar at the top of every screen:
+        </InlineMonoType>
+        . This code is responsible for displaying the navigation bar at the top
+        of every screen.
+      </Paragraph>
+      <Paragraph darkMode>
+        Let's add the <InlineMonoType darkMode>useOptionUser()</InlineMonoType>{" "}
+        hook into the <InlineMonoType darkMode>Navbar</InlineMonoType>{" "}
+        component:
       </Paragraph>
 
-      <div className="my-6">
+      <div className="mb-6">
         <CodeBlock
-          snippet={navbarStarterCodeSnippet}
-          filePath="app/components/Navbar/index.tsx"
+          snippet={addUseOptionalUserToNavbar}
           showLineNumbers
+          filePath="app/components/Navbar/index.tsx"
+          highlightAdditionalLines={[3, 4]}
         />
       </div>
+
+      <Paragraph darkMode>
+        The <InlineMonoType darkMode>useOptionalUser()</InlineMonoType> hook
+        returns one of two things. If the user is logged in, it will return an
+        object with details of their id and email.
+      </Paragraph>
+      <Paragraph darkMode>
+        If no user is signed in,{" "}
+        <InlineMonoType darkMode>useOptionalUser()</InlineMonoType> will
+        returned <InlineMonoType darkMode>undefined</InlineMonoType>.
+      </Paragraph>
+      <Paragraph darkMode>
+        Head over to Chrome and{" "}
+        <ExternalLink to="https://developer.chrome.com/docs/devtools/open/#chrome-menu">
+          open the DevTools JavaScript console
+        </ExternalLink>
+        .
+      </Paragraph>
+
+      <div className="mb-6">
+        <Screenshot
+          src={optionalUserConsoleLogSignedIn}
+          alt="User object logged to console when signed in"
+        />
+      </div>
+
+      <Paragraph darkMode>
+        If you are already logged in, you will see the{" "}
+        <InlineMonoType darkMode>user</InlineMonoType> object in the console at
+        the bottom of your window.
+      </Paragraph>
+
+      <Paragraph darkMode>
+        If you are not logged in, the{" "}
+        <InlineMonoType darkMode>user</InlineMonoType> will show as{" "}
+        <InlineMonoType darkMode>undefined</InlineMonoType>:
+      </Paragraph>
+
+      <div className="mb-6">
+        <Screenshot
+          src={optionalUserConsoleLogUndefined}
+          alt="User object is undefined when signed out"
+        />
+      </div>
+
+      <Paragraph darkMode>
+        In the next lesson, we will render a 'Login' or 'Logout' button
+        depending on whether a user is found.
+      </Paragraph>
+
+      <NextLessonLink to="/remix/authentication/conditional-rendering">
+        Conditionally render content when signed in
+      </NextLessonLink>
     </>
   );
 };
