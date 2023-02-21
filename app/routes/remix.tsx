@@ -11,7 +11,7 @@ export const loader = async ({ request }: LoaderArgs) => {
 const Remix = () => {
   return (
     <div className="flex min-h-screen bg-neutral-900 text-white">
-      <aside className="w-1/4 p-6">
+      <aside className="w-1/4 p-12">
         <section>
           <h3 className="mb-4 text-sm font-bold uppercase">Prisma (Data)</h3>
           <div>
@@ -25,9 +25,17 @@ const Remix = () => {
           <div>
             <Link
               className="mb-2 text-sm text-neutral-300 hover:text-white"
-              to="routing-in-remix/adding-a-new-page"
+              to="routing-in-remix/adding-a-new-page/add-a-route-file"
             >
               Adding a new page
+            </Link>
+          </div>
+          <div>
+            <Link
+              className="mb-2 text-sm text-neutral-300 hover:text-white"
+              to="authentication/require-user-id"
+            >
+              Protecting Routes with Authentication
             </Link>
           </div>
         </section>
