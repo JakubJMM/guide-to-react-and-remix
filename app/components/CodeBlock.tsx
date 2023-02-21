@@ -53,9 +53,8 @@ const CodeBlock = ({
       ) : (
         <CopyToClipboard text={snippet} onCopy={handleCopy}>
           <span
-            className={`group absolute right-1 cursor-pointer rounded p-2 hover:bg-neutral-500 ${
-              filePath ? "top-7" : "top-1"
-            }`}
+            className={`group absolute right-1 z-50 cursor-pointer rounded p-2 hover:bg-neutral-500
+             ${filePath ? "top-7" : "top-1"}`}
           >
             <Copy
               type="button"
@@ -81,6 +80,8 @@ const CodeBlock = ({
               if (highlightLineNumber === lineNumber) {
                 style.backgroundColor = "rgba(6, 78, 59, 0.5)";
                 style.borderLeft = "4px solid rgb(34 197 94)";
+                style.position = "relative";
+                style.left = "-4px";
               }
 
               return { style };
@@ -91,6 +92,8 @@ const CodeBlock = ({
               if (highlightLineNumber === lineNumber) {
                 style.backgroundColor = "rgba(127, 29, 29, 0.5)";
                 style.borderLeft = "4px solid rgb(239 68 68)";
+                style.position = "relative";
+                style.left = "-4px";
               }
 
               return { style };
