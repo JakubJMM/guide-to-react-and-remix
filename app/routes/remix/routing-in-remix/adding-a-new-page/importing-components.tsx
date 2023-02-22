@@ -77,6 +77,7 @@ const ImportingComponents = ({ children }: ImportingComponentsProps) => {
       </ChallengeBlock>
 
       <CodePlayground
+        id="importing-components-challenge"
         title="Memberships.tsx"
         files={membershipRouteFile}
         showTabs={false}

@@ -30,6 +30,14 @@ const Remix = () => {
               Protecting Routes with Authentication
             </Link>
           </div>
+          <div>
+            <Link
+              className="mb-2 text-sm text-neutral-300 hover:text-white"
+              to="adding-npm-packages/react-feather"
+            >
+              Adding NPM Packages
+            </Link>
+          </div>
         </section>
       </aside>
       <main className="h-full w-3/4 py-6">
