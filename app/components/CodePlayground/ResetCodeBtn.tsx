@@ -1,12 +1,8 @@
-import { SandpackFiles, useSandpack } from "@codesandbox/sandpack-react";
+import { useSandpack } from "@codesandbox/sandpack-react";
 import { SkipBack } from "react-feather";
 import Boop from "../Boop";
 
-interface ResetCodeBtnProps {
-  files: SandpackFiles;
-}
-
-const ResetCodeBtn = ({ files }: ResetCodeBtnProps) => {
+const ResetCodeBtn = () => {
   const { sandpack } = useSandpack();
 
   const revertCurrentFile = () => {

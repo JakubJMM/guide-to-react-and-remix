@@ -3,6 +3,7 @@ import {
   SandpackLayout,
   SandpackPreview,
   SandpackProvider,
+  SandpackSetup,
   SandpackThemeProvider,
 } from "@codesandbox/sandpack-react";
 import { monokaiPro } from "@codesandbox/sandpack-themes";
@@ -12,6 +13,8 @@ import ResetCodeBtn from "./ResetCodeBtn";
 import SandpackForkBtn from "./SandpackForkBtn";
 
 interface CodeSandboxProps {
+  id?: string;
+  customSetup?: SandpackSetup;
   template?:
     | "react-ts"
     | "react"
@@ -26,13 +29,14 @@ interface CodeSandboxProps {
     | "test-ts";
   theme?: SandpackTheme;
   title?: string;
-  // files: Record<string, string | Record<string, string | boolean> | boolean>;
   files: SandpackFiles;
   activeFile?: string;
   showTabs?: boolean;
 }
 
 const CodePlayground = ({
+  customSetup,
+  id,
   title = "Code Playground",
   template = "react-ts",
   theme = monokaiPro,
@@ -45,30 +49,27 @@ const CodePlayground = ({
     <div className="py-6">
       <SandpackProvider
         options={{
-          externalResources: [
-            "https://unpkg.com/@tailwindcss/ui/dist/tailwind-ui.min.css",
-          ],
+          externalResources: ["https://cdn.tailwindcss.com"],
         }}
         template={template}
         files={files}
+        customSetup={customSetup}
       >
         <SandpackThemeProvider theme={theme}>
           <SandpackLayout>
-            <div>
-              <div className="flex items-center justify-between overflow-hidden rounded-t-xl px-2 py-1">
-                <span className="mx-2 text-xs font-bold uppercase text-neutral-400">
-                  {title}
-                </span>
-                <div className="flex">
-                  <ResetCodeBtn files={files} />
-                  <SandpackForkBtn />
-                </div>
-              </div>
-
+            <div className="flex min-w-full items-center justify-between overflow-hidden rounded-t-xl px-2 py-1">
+              <span className="mx-2 text-xs font-bold uppercase text-neutral-400">
+                {title}
+              </span>
               <div className="flex">
-                <LocalStorageCodeEditor showTabs={showTabs} />
-                <SandpackPreview style={{ height: sandpackHeight }} />
+                <ResetCodeBtn />
+                <SandpackForkBtn />
               </div>
+            </div>
+
+            <div className="flex w-full">
+              <LocalStorageCodeEditor id={id} showTabs={showTabs} />
+              <SandpackPreview style={{ height: sandpackHeight }} />
             </div>
           </SandpackLayout>
         </SandpackThemeProvider>
