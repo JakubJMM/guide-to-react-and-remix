@@ -8,10 +8,13 @@ const RevealAnswerButton = ({ onClick }: RevealAnswerButtonProps) => {
   return (
     <button
       type="button"
-      className="group flex items-center text-xl uppercase leading-relaxed tracking-wide text-neutral-400 transition-all hover:scale-110 hover:text-neutral-100"
+      className="group flex w-full items-center justify-center text-3xl uppercase leading-relaxed tracking-wide text-purple-400 transition-all hover:scale-110 hover:text-purple-100"
       onClick={onClick}
     >
-      <Eye className="mr-4 stroke-neutral-400 group-hover:stroke-neutral-100" />{" "}
+      <Eye
+        className="mr-4 stroke-purple-400 group-hover:stroke-purple-100"
+        size={"2rem"}
+      />{" "}
       Reveal
     </button>
   );

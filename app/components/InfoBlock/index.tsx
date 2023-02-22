@@ -6,7 +6,10 @@ interface InfoBlockProps {
   title?: string;
 }
 
-const InfoBlock = ({ children, title = "Information" }: InfoBlockProps) => {
+const InfoBlock = ({
+  children,
+  title = "More Information",
+}: InfoBlockProps) => {
   return (
     <div className="relative mb-6 mt-12 border-l-4 border-l-purple-300 bg-purple-900 py-8 px-10">
       <div className="absolute -top-10 -left-11 flex h-20 w-20 items-center justify-center rounded-full bg-neutral-900">

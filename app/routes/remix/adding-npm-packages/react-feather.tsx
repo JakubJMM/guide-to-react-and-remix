@@ -13,7 +13,7 @@ interface ReactFeatherProps {
 }
 
 const ReactFeather = ({ children }: ReactFeatherProps) => {
-  const [isShowingAnswer, setIsShowingAnswer] = useState(true);
+  const [isShowingAnswer, setIsShowingAnswer] = useState(false);
 
   const handleShowInstallReactFeathersAnswer = () => {
     setIsShowingAnswer(true);

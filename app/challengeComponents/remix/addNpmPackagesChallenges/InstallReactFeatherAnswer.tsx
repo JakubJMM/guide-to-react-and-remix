@@ -8,6 +8,10 @@ import InlineMonoType from "~/components/InlineMonoType";
 import Paragraph from "~/components/Paragraph";
 import Screenshot from "~/components/Screenshot";
 import finalDesign from "~/assets/jpg/react-feather-final-design.jpg";
+import { useState } from "react";
+import RevealAnswerButton from "~/components/RevealAnswerButton";
+import ImportReactFeatherAnswer from "./ImportReactFeatherAnswer";
+import ExternalLink from "~/components/ExternalLink";
 
 const reactFeatherFiles = {
   "/App.tsx": `import Photography from './photography.tsx';
@@ -26,6 +30,12 @@ const reactFeatherSetup: SandpackSetup = {
 };
 
 const InstallReactFeatherAnswer = () => {
+  const [isShowingAnswer, setIsShowingAnswer] = useState(false);
+
+  const handleImportReactFeatherAnswer = () => {
+    setIsShowingAnswer(true);
+  };
+
   return (
     <>
       <Heading isCentre level="h2">
@@ -48,8 +58,11 @@ const InstallReactFeatherAnswer = () => {
       <Paragraph darkMode>
         To the right of the React Feather NPM page are two links: one headed
         'Repository' and the other 'Homepage'. In this case, they both link to
-        different places on the same webpage, so click 'Homepage' to go straight
-        to the instructions:
+        different places on the same webpage, so click{" "}
+        <ExternalLink to="https://github.com/feathericons/react-feather#readme">
+          Homepage
+        </ExternalLink>{" "}
+        to go straight to the instructions:
       </Paragraph>
       <div className="mb-6">
         <Screenshot
@@ -64,16 +77,19 @@ const InstallReactFeatherAnswer = () => {
       </Paragraph>
       <Paragraph darkMode>
         At the top of the README are the installation instructions again, but
-        just below this you can see a section headed 'Usage'. Read this
-        carefully, then have a go at the challenge below:
+        just below this you can see a section headed{" "}
+        <ExternalLink to="https://github.com/feathericons/react-feather#usage">
+          Usage
+        </ExternalLink>
+        . Read this carefully, then have a go at the challenge below:
       </Paragraph>
 
       <div className="m-auto max-w-4xl">
         <ChallengeBlock>
           <Paragraph challengeBlock>
             Using the interactive code block below, import the 'Camera' icon
-            from React Feather and place it above the 'Free Photography Lesson'
-            header.
+            from React Feather and place it above the 'Free Photography
+            Lessons!' heading text.
           </Paragraph>
 
           <Paragraph challengeBlock>
@@ -98,12 +114,18 @@ const InstallReactFeatherAnswer = () => {
       </div>
 
       <CodePlayground
-        // id="react-feather-challenges"
+        id="react-feather-challenges"
         customSetup={reactFeatherSetup}
         files={reactFeatherFiles}
         showTabs={false}
         title="Photography.tsx"
       />
+
+      {!isShowingAnswer ? (
+        <RevealAnswerButton onClick={handleImportReactFeatherAnswer} />
+      ) : null}
+
+      {isShowingAnswer ? <ImportReactFeatherAnswer /> : null}
     </>
   );
 };
