@@ -1,5 +1,6 @@
 import { importReactFeatherAnswerSnippet } from "~/assets/codeSnippets/installingNpmPackages/importReactFeatherChallenge";
 import CodeBlock from "~/components/CodeBlock";
+import ExternalLink from "~/components/ExternalLink";
 import Heading from "~/components/Heading";
 import InfoBlock from "~/components/InfoBlock";
 import Paragraph from "~/components/Paragraph";
@@ -21,8 +22,15 @@ const ImportReactFeatherAnswer = () => {
       <Paragraph darkMode>
         And that's it! You've installed a custom NPM package and started using
         it in your project.
+      </Paragraph>{" "}
+      <Paragraph darkMode>
+        More icons can be be found on the{" "}
+        <ExternalLink to="https://feathericons.com/">
+          FeatherIcons website
+        </ExternalLink>
+        . Either browse their icons, or use the search bar at the top of the
+        page to find the one you need.
       </Paragraph>
-
       <div className="m-auto max-w-4xl">
         <InfoBlock>
           <Paragraph challengeBlock>
