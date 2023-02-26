@@ -44,7 +44,7 @@ const CodeBlock = ({
       ) : null}
       {isCopied ? (
         <span
-          className={`absolute right-1 px-2 py-1 text-xs uppercase text-neutral-400 ${
+          className={`absolute right-1 bg-neutral-900 bg-opacity-90 px-2 py-1 text-xs uppercase text-neutral-400 ${
             filePath ? "top-7" : "top-2"
           }`}
         >
@@ -53,7 +53,7 @@ const CodeBlock = ({
       ) : (
         <CopyToClipboard text={snippet} onCopy={handleCopy}>
           <span
-            className={`group absolute right-1 z-50 cursor-pointer rounded p-2 hover:bg-neutral-500
+            className={`group absolute right-1 z-50 cursor-pointer rounded bg-neutral-900 bg-opacity-90 p-2 hover:bg-neutral-500 hover:bg-opacity-90
              ${filePath ? "top-7" : "top-1"}`}
           >
             <Copy
