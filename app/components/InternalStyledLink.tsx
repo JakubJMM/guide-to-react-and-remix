@@ -2,6 +2,7 @@ import { Link } from "@remix-run/react";
 import type { ReactNode } from "react";
 
 type InternalStyledLinkProps = {
+  challengeBlock?: boolean;
   children: ReactNode;
   className?: string;
   darkMode?: boolean;
@@ -9,6 +10,7 @@ type InternalStyledLinkProps = {
 };
 
 const InternalStyledLink = ({
+  challengeBlock = false,
   children,
   className = "",
   darkMode = false,
@@ -20,6 +22,8 @@ const InternalStyledLink = ({
       type="button"
       className={`text-lg tracking-wide text-blue-500 no-underline transition-colors ${
         darkMode ? "hover:text-blue-400" : "hover:text-blue-700"
+      } ${
+        challengeBlock ? "hover:text-blue-200" : "hover:text-blue-700"
       } ${className}`}
     >
       {children}
