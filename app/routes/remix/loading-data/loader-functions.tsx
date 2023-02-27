@@ -25,25 +25,27 @@ const loaderFunctions = () => {
       <Heading isCentre level="h2">
         Loader Functions
       </Heading>
-      <InfoBlock title="Before starting...">
-        <Paragraph className="mb-0" challengeBlock>
-          Before starting this lesson, you should have completed the lesson on
-          authentication{" "}
-          <InternalStyledLink
-            className="text-[1.5rem]"
-            to="/remix/authentication/require-user-id"
-          >
-            here
-          </InternalStyledLink>{" "}
-          and the lesson on adding a new Prisma model that starts{" "}
-          <InternalStyledLink
-            className="text-[1.5rem]"
-            to="/remix/prisma/adding-a-prisma-model/creating-a-table"
-          >
-            here
-          </InternalStyledLink>
-        </Paragraph>
-      </InfoBlock>
+      <div className="px-6">
+        <InfoBlock title="Before starting...">
+          <Paragraph className="mb-0" challengeBlock>
+            Before starting this lesson, you should have completed the lesson on
+            authentication{" "}
+            <InternalStyledLink
+              className="text-[1.5rem]"
+              to="/remix/authentication/require-user-id"
+            >
+              here
+            </InternalStyledLink>{" "}
+            and the lesson on adding a new Prisma model that starts{" "}
+            <InternalStyledLink
+              className="text-[1.5rem]"
+              to="/remix/prisma/adding-a-prisma-model/creating-a-table"
+            >
+              here
+            </InternalStyledLink>
+          </Paragraph>
+        </InfoBlock>
+      </div>
       <Paragraph darkMode>
         Loader functions are how Remix handles fetching data from the backend
         database of your site to be displayed on a webpage.
