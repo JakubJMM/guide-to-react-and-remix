@@ -9,6 +9,7 @@ interface CodeBlockProps {
   language?: string;
   showLineNumbers?: boolean;
   snippet: string;
+  hideCopyButton?: boolean;
   highlightAdditionalLines?: number[];
   highlightSubtractedLines?: number[];
 }
@@ -18,6 +19,7 @@ const CodeBlock = ({
   language = "javascript",
   showLineNumbers,
   snippet,
+  hideCopyButton = false,
   highlightAdditionalLines,
   highlightSubtractedLines,
 }: CodeBlockProps) => {
@@ -51,18 +53,22 @@ const CodeBlock = ({
           Copied!
         </span>
       ) : (
-        <CopyToClipboard text={snippet} onCopy={handleCopy}>
-          <span
-            className={`group absolute right-1 z-10 cursor-pointer rounded bg-neutral-900 bg-opacity-90 p-2 hover:bg-neutral-500 hover:bg-opacity-90
+        <>
+          {hideCopyButton ? null : (
+            <CopyToClipboard text={snippet} onCopy={handleCopy}>
+              <span
+                className={`group absolute right-1 z-10 cursor-pointer rounded bg-neutral-900 bg-opacity-90 p-2 hover:bg-neutral-500 hover:bg-opacity-90
              ${filePath ? "top-7" : "top-1"}`}
-          >
-            <Copy
-              type="button"
-              className={`stroke-neutral-400 group-hover:stroke-neutral-800`}
-              onClick={handleCopy}
-            />
-          </span>
-        </CopyToClipboard>
+              >
+                <Copy
+                  type="button"
+                  className={`stroke-neutral-400 group-hover:stroke-neutral-800`}
+                  onClick={handleCopy}
+                />
+              </span>
+            </CopyToClipboard>
+          )}
+        </>
       )}
       <SyntaxHighlighter
         language={language}
