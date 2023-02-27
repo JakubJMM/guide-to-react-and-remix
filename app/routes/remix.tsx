@@ -9,17 +9,17 @@ const Remix = () => {
           <div>
             <Link
               className="mb-2 text-sm text-neutral-300 hover:text-white"
-              to="prisma/adding-a-prisma-model"
+              to="routing-in-remix/adding-a-new-page/add-a-route-file"
             >
-              Adding a Prisma model
+              Adding a new page
             </Link>
           </div>
           <div>
             <Link
               className="mb-2 text-sm text-neutral-300 hover:text-white"
-              to="routing-in-remix/adding-a-new-page/add-a-route-file"
+              to="adding-npm-packages/react-feather"
             >
-              Adding a new page
+              Adding NPM Packages
             </Link>
           </div>
           <div>
@@ -33,9 +33,17 @@ const Remix = () => {
           <div>
             <Link
               className="mb-2 text-sm text-neutral-300 hover:text-white"
-              to="adding-npm-packages/react-feather"
+              to="prisma/adding-a-prisma-model"
             >
-              Adding NPM Packages
+              Adding a Prisma model
+            </Link>
+          </div>
+          <div>
+            <Link
+              className="mb-2 text-sm text-neutral-300 hover:text-white"
+              to="loading-data/loader-functions"
+            >
+              Loading Data
             </Link>
           </div>
         </section>
