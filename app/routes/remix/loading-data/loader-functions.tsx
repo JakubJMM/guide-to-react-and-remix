@@ -1,17 +1,24 @@
+import {
+  getMembershipsSnippet,
+  loadMembershipsOnPage,
+} from "~/assets/codeSnippets/loadingData/loadingMembershipData";
+import consoleLogMemberships from "~/assets/jpg/console-log-memberships.jpg";
+import createMembershipServerFile from "~/assets/jpg/create-membership-server-file.jpg";
+import MembershipsLoaderAnswer from "~/challengeComponents/remix/loaderFunctionChallenges/MembershipsLoaderAnswer";
+import ChallengeBlock from "~/components/ChallengeBlock";
+import CodeBlock from "~/components/CodeBlock";
 import Heading from "~/components/Heading";
 import InfoBlock from "~/components/InfoBlock";
 import InlineMonoType from "~/components/InlineMonoType";
 import InternalStyledLink from "~/components/InternalStyledLink";
 import Paragraph from "~/components/Paragraph";
+import RevealAnswerButton from "~/components/RevealAnswerButton";
 import Screenshot from "~/components/Screenshot";
-import createMembershipServerFile from "~/assets/jpg/create-membership-server-file.jpg";
-import CodeBlock from "~/components/CodeBlock";
-import {
-  getMembershipsSnippet,
-  loadMembershipsOnPage,
-} from "~/assets/codeSnippets/loadingData/loadingMembershipData";
+import useShowAnswer from "~/hooks/useShowAnswer";
 
 const loaderFunctions = () => {
+  const { isShowingAnswer, handleShowAnswer } = useShowAnswer();
+
   return (
     <>
       <Heading isCentre level="h2">
@@ -38,7 +45,7 @@ const loaderFunctions = () => {
       </InfoBlock>
       <Paragraph darkMode>
         Loader functions are how Remix handles fetching data from the backend
-        database of your site in a way that can be displayed on a webpage.
+        database of your site to be displayed on a webpage.
       </Paragraph>
       <Paragraph darkMode>
         Any code written inside a loader function is executed on the server -
@@ -84,7 +91,7 @@ const loaderFunctions = () => {
         work:
       </Paragraph>
 
-      <div className="mb-6">
+      <div className="mb-6 px-6">
         <CodeBlock
           snippet={getMembershipsSnippet}
           showLineNumbers
@@ -108,7 +115,7 @@ const loaderFunctions = () => {
         and add the code below to your loader function:
       </Paragraph>
 
-      <div className="mb-6">
+      <div className="mb-6 px-6">
         <CodeBlock
           snippet={loadMembershipsOnPage}
           showLineNumbers
@@ -117,6 +124,51 @@ const loaderFunctions = () => {
           highlightAdditionalLines={[1, 2, 4, 10, 14, 15]}
         />
       </div>
+
+      <Paragraph darkMode>
+        Once you saved your changes, open up the memberships page and look at
+        the browser console. You should be able to see the details of all the
+        memberships you seeded in our{" "}
+        <InternalStyledLink
+          to="/remix/prisma/adding-a-prisma-model/seeding-data-challenge"
+          className="text-[1.5rem]"
+        >
+          previous lesson
+        </InternalStyledLink>
+        :
+      </Paragraph>
+
+      <div className="mb-6 px-6">
+        <Screenshot
+          src={consoleLogMemberships}
+          alt="Console log all membership details"
+        />
+      </div>
+
+      <div className="px-6">
+        <ChallengeBlock>
+          <Paragraph challengeBlock>
+            Now you have all of the membership data loaded onto the page, can
+            you loop through this array to produce a{" "}
+            <InlineMonoType challengeBlock>MembershipCard</InlineMonoType> for
+            every <InlineMonoType challengeBlock>membership</InlineMonoType>?
+          </Paragraph>
+          <Paragraph challengeBlock>
+            Each card produced should interpolate the{" "}
+            <InlineMonoType challengeBlock>level</InlineMonoType>,{" "}
+            <InlineMonoType challengeBlock>description</InlineMonoType> and{" "}
+            <InlineMonoType challengeBlock>price</InlineMonoType> directly from
+            the <InlineMonoType challengeBlock>membership</InlineMonoType>,
+            replacing the hard-coded data that is currently present.
+          </Paragraph>
+        </ChallengeBlock>
+      </div>
+
+      {!isShowingAnswer ? (
+        <RevealAnswerButton onClick={handleShowAnswer} />
+      ) : null}
+
+      {isShowingAnswer ? <MembershipsLoaderAnswer /> : null}
     </>
   );
 };

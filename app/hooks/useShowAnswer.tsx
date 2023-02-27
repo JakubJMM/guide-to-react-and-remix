@@ -7,5 +7,5 @@ export default function useShowAnswer() {
     setIsShowingAnswer(true);
   };
 
-  return [isShowingAnswer, handleShowAnswer];
+  return { isShowingAnswer, handleShowAnswer };
 }
