@@ -7,6 +7,7 @@ import createMembershipServerFile from "~/assets/jpg/create-membership-server-fi
 import MembershipsLoaderAnswer from "~/challengeComponents/remix/loaderFunctionChallenges/MembershipsLoaderAnswer";
 import ChallengeBlock from "~/components/ChallengeBlock";
 import CodeBlock from "~/components/CodeBlock";
+import ExternalLink from "~/components/ExternalLink";
 import Heading from "~/components/Heading";
 import InfoBlock from "~/components/InfoBlock";
 import InlineMonoType from "~/components/InlineMonoType";
@@ -161,6 +162,23 @@ const loaderFunctions = () => {
             the <InlineMonoType challengeBlock>membership</InlineMonoType>,
             replacing the hard-coded data that is currently present.
           </Paragraph>
+
+          <div className="bg-black bg-opacity-50 p-6">
+            <Paragraph challengeBlock>
+              HINT: Remember that our{" "}
+              <InlineMonoType challengeBlock>memberships</InlineMonoType> are
+              arriving to us in the form of an array.
+            </Paragraph>
+            <Paragraph challengeBlock>
+              Take a look at how JavaScript's{" "}
+              <InlineMonoType challengeBlock>map</InlineMonoType> function can
+              be used to{" "}
+              <ExternalLink to="https://beta.reactjs.org/learn/rendering-lists#rendering-data-from-arrays">
+                render data from arrays
+              </ExternalLink>{" "}
+              in a React component.
+            </Paragraph>
+          </div>
         </ChallengeBlock>
       </div>
 
