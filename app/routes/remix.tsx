@@ -41,9 +41,17 @@ const Remix = () => {
           <div>
             <Link
               className="mb-2 text-sm text-neutral-300 hover:text-white"
-              to="loading-data/loader-functions"
+              to="loading-data/prisma-getter-functions"
             >
               Loading Data
+            </Link>
+          </div>
+          <div>
+            <Link
+              className="mb-2 text-sm text-neutral-300 hover:text-white"
+              to="updating-data/forms"
+            >
+              Updating Data With Forms
             </Link>
           </div>
         </section>
