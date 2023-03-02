@@ -15,7 +15,12 @@ const UpdatingData = () => {
         <LessonLink to="updating-components" connectTo="action-functions">
           Updating components
         </LessonLink>
-        <LessonLink to="action-functions">Action Functions</LessonLink>
+        <LessonLink to="action-functions" connectTo="update-user-membership">
+          Action Functions
+        </LessonLink>
+        <LessonLink to="update-user-membership">
+          Update User Membership
+        </LessonLink>
       </div>
       <div className="px-6">
         <Outlet />

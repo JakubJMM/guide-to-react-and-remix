@@ -11,6 +11,7 @@ import InternalStyledLink from "~/components/InternalStyledLink";
 import Paragraph from "~/components/Paragraph";
 import actionFunctionConsoleLog from "~/assets/jpg/action-function-console-log.jpg";
 import Screenshot from "~/components/Screenshot";
+import NextLessonLink from "~/components/NextLessonLink";
 
 const ActionFunctions = () => {
   return (
@@ -111,6 +112,10 @@ const ActionFunctions = () => {
           />
         </InfoBlock>
       </div>
+
+      <NextLessonLink to="/remix/updating-data/update-user-membership">
+        Next: Update user membership
+      </NextLessonLink>
     </>
   );
 };
