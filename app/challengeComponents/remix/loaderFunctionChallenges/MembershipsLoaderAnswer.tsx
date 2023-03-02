@@ -9,7 +9,7 @@ const MembershipsLoaderAnswer = () => {
   return (
     <>
       <Heading level="h2" isCentre>
-        MembershipsLoaderAnswer{" "}
+        Memberships Loader Answer{" "}
       </Heading>
       <Paragraph darkMode>Compare the code below with your solution:</Paragraph>
 
@@ -50,7 +50,7 @@ const MembershipsLoaderAnswer = () => {
         display it to a user.
       </Paragraph>
       <Paragraph darkMode>
-        In our next lesson, we will allow users to select a membership level
+        In our next lesson, we will allow users to update their membership level
         from the options provided.
       </Paragraph>
     </>
