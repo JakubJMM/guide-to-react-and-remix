@@ -42,3 +42,52 @@ export default function Memberships() {
   // [...the rest of the Memberships page code goes here...]
 
 }`;
+
+export const updateUserMembershipSnippet = `interface UpdateUserMembershipArgs {
+  userId: string;
+  membershipId: string;
+}
+export async function updateUserMembership({
+  userId,
+  membershipId,
+}: UpdateUserMembershipArgs) {
+  return prisma.user.update({
+    where: {
+      id: userId,
+    },
+    data: {
+      membershipId,
+    },
+  });
+}`;
+
+export const callUpdateUserMembershipsFromAction = `// [...lots of imports here...]
+
+import invariant from "tiny-invariant";
+import {
+  getMemberships,
+  updateUserMembership,
+} from "~/models/membership.server";
+
+  // [...other imports and our loader function here...]
+
+export async function action({ request }: ActionArgs) {
+  const formData = await request.formData();
+  const membershipId = formData.get("memberships");
+  const userId = formData.get("userId");
+
+  invariant(
+    typeof membershipId === "string",
+    "membershipId must be present and a string value"
+  );
+  invariant(
+    typeof userId === "string",
+    "userId must be present and a string value"
+  );
+
+  await updateUserMembership({ userId, membershipId });
+
+  return null;
+}
+
+// [...the rest of our Memberships component code here...]`;
