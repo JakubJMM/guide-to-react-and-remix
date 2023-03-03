@@ -18,11 +18,13 @@ const AddARouteFile = () => {
       </Heading>
       <div className="lg:flex">
         <div className="flex flex-col items-start justify-center p-2 lg:w-1/2">
-          <Paragraph darkMode>Adding a new page is easy in Remix.</Paragraph>
+          <Paragraph darkMode>
+            Adding a new page is really easy to do in Remix.
+          </Paragraph>
           <Paragraph darkMode>
             Inside the <InlineMonoType darkMode>app/routes</InlineMonoType>{" "}
-            folder in your project, create a new file whose filename matches the
-            new route you want to create.
+            folder in your project, create a new file whose name matches the new
+            route you want to create.
           </Paragraph>
           <Paragraph darkMode>
             So if you wanted to create a page on your website that had the URL{" "}
