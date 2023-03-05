@@ -15,11 +15,15 @@ interface ImageModalProps {
 const ImageModal = ({ alt, handleCloseModal, src }: ImageModalProps) => {
   return (
     <div
-      className="fixed top-0 left-0 z-50 flex h-screen w-screen cursor-pointer items-center justify-center bg-neutral-500 bg-opacity-90"
+      className="fixed top-0 left-0 z-50 flex h-screen w-screen cursor-pointer items-center justify-center bg-neutral-500 bg-opacity-90 p-4"
       onClick={handleCloseModal}
     >
-      <div className="flex h-auto max-w-full items-center justify-center p-4">
-        <img src={src} alt={alt} className="rounded-lg shadow-2xl" />
+      <div className="flex max-w-full items-center justify-center">
+        <img
+          src={src}
+          alt={alt}
+          className="max-h-[95vh] rounded-lg shadow-2xl"
+        />
       </div>
     </div>
   );
