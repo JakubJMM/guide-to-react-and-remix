@@ -2,12 +2,14 @@ import {
   callUpdateUserMembershipsFromAction,
   updateUserMembershipSnippet,
 } from "~/challengeComponents/remix/updatingDataSnippets/actionFunctions";
+import ChallengeBlock from "~/components/ChallengeBlock";
 import CodeBlock from "~/components/CodeBlock";
 import ExternalLink from "~/components/ExternalLink";
 import Heading from "~/components/Heading";
 import InfoBlock from "~/components/InfoBlock";
 import InlineMonoType from "~/components/InlineMonoType";
 import Paragraph from "~/components/Paragraph";
+import Screenshot from "~/components/Screenshot";
 
 interface UpdateUserMembershipProps {
   children: React.ReactNode;
@@ -113,6 +115,29 @@ const UpdateUserMembership = ({ children }: UpdateUserMembershipProps) => {
         Congratulations! The new membership level has saved to the database.
         Users can now manage their memberships from the website! 😀
       </Paragraph>
+
+      <ChallengeBlock title="Extra Credits (2)">
+        <Paragraph challengeBlock>
+          1. Can you offer a way for users to cancel their membership
+          altogether?
+        </Paragraph>
+        <Paragraph challengeBlock>
+          You have already written much of the code for this already. You simply
+          need an option on the form to cancel user memberships. But what value
+          will you send in the form's cancel membership option?
+        </Paragraph>
+
+        <Paragraph challengeBlock>
+          2. Can you customise the memberships page design to make it more
+          appealing? Look at the example below for some ideas:
+        </Paragraph>
+
+        <Screenshot
+          challengeBlock
+          src="https://res.cloudinary.com/dptdx8zuv/image/upload/v1678034571/react-introduction/memberships-page-final_hoipsq.gif"
+          alt="An alternative MembershipCard design"
+        />
+      </ChallengeBlock>
     </>
   );
 };
