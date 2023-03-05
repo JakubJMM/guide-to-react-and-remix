@@ -1,6 +1,7 @@
 import { useState } from "react";
 import InstallReactShareAnswer from "~/challengeComponents/remix/addNpmPackagesChallenges/InstallReactShareAnswer";
 import ChallengeBlock from "~/components/ChallengeBlock";
+import ExternalLink from "~/components/ExternalLink";
 import Heading from "~/components/Heading";
 import InternalStyledLink from "~/components/InternalStyledLink";
 import Paragraph from "~/components/Paragraph";
@@ -31,8 +32,14 @@ const ReactShare = ({ children }: ReactShareProps) => {
 
       <ChallengeBlock>
         <Paragraph challengeBlock>
-          Using your knowledge of installing NPM packages and reading their
-          documentation from our{" "}
+          Read the NPM installation instructions over on the{" "}
+          <ExternalLink to="https://github.com/nygardk/react-share#install">
+            React Share Github page
+          </ExternalLink>
+          .
+        </Paragraph>
+        <Paragraph challengeBlock>
+          Using your knowledge of installing NPM packages from our{" "}
           <InternalStyledLink
             challengeBlock
             className="text-[1.5rem]"
