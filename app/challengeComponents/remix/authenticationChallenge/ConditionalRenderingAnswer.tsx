@@ -34,7 +34,10 @@ const ConditionalRenderingAnswer = () => {
         <InfoBlock title="How does this work?">
           <Paragraph challengeBlock>
             Because of how JavaScript's{" "}
-            <ExternalLink to="https://dev.to/myogeshchavan97/javascript-basics-truthy-and-falsy-values-in-javascript-4jo2">
+            <ExternalLink
+              challengeBlock
+              to="https://dev.to/myogeshchavan97/javascript-basics-truthy-and-falsy-values-in-javascript-4jo2"
+            >
               truthy and falsy values work
             </ExternalLink>
             , if <InlineMonoType challengeBlock>user</InlineMonoType> is{" "}
@@ -45,7 +48,7 @@ const ConditionalRenderingAnswer = () => {
             executed.
           </Paragraph>
           <Paragraph challengeBlock>
-            Likewise, if we have a{" "}
+            However, if we <em className="font-italic">do</em> have a{" "}
             <InlineMonoType challengeBlock>user</InlineMonoType> object (i.e.
             the user is signed in), then the ternary statement will evaluate to{" "}
             <InlineMonoType challengeBlock>true</InlineMonoType>, and the code

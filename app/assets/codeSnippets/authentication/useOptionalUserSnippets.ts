@@ -36,13 +36,28 @@ export const addLoginButtonToNavbar = `const Navbar = () => {
   );
 };`;
 
-export const addLogoutButtonToNavbar = `const Navbar = () => {
+export const redirectToMembershipsSnippet = `// [...lots of imports and a loader function here...]
+
+export async function action({ request }: ActionArgs) {
+  const formData = await request.formData();
+  const email = formData.get("email");
+  const password = formData.get("password");
+  const redirectTo = safeRedirect(formData.get("redirectTo"), "/notes");
+  const redirectTo = safeRedirect(formData.get("redirectTo"), "/memberships");
+  const remember = formData.get("remember");
+  
+  // [...remaining code follows here...]`;
+
+export const addLogoutButtonToNavbar = `import { Form, Link } from "@remix-run/react";
+// [...lots of other imports here...]
+
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const user = useOptionalUser();
 
   return (
     <header className="bg-neutral-800 md:flex md:justify-between">
-      {/* Lots of links to different pages */}
+      {/* [...lots of links to different pages here...] */}
         <Form action="/logout" method="post">
           <button
             type="submit"

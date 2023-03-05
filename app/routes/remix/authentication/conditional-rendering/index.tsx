@@ -2,6 +2,7 @@ import { useState } from "react";
 import {
   addLoginButtonToNavbar,
   addLogoutButtonToNavbar,
+  redirectToMembershipsSnippet,
 } from "~/assets/codeSnippets/authentication/useOptionalUserSnippets";
 import loginAndLogoutButtons from "~/assets/jpg/login-and-logout-buttons-together.jpg";
 import loginButton from "~/assets/jpg/login-button-in-navbar.jpg";
@@ -39,6 +40,7 @@ const ConditionalRendering = () => {
           showLineNumbers
           filePath="app/components/Navbar/index.tsx"
           highlightAdditionalLines={[13, 14, 15, 16, 17, 18, 19]}
+          hideCopyButton
         />
       </div>
 
@@ -66,13 +68,44 @@ const ConditionalRendering = () => {
         <Screenshot src={loginButton} alt="Login button inside the Navbar" />
       </div>
 
+      <Paragraph darkMode>
+        If you click the new login button and sign in, you will be taken to a
+        Notes page found at <InlineMonoType darkMode>/notes</InlineMonoType>.
+        This is part of the Remix stack's boilerplate code to help you get
+        started. We can ignore all of this 'Notes' code, but if you are
+        interested, feel free to take a look around this code in both the{" "}
+        <InlineMonoType darkMode>app/routes/notes.tsx</InlineMonoType> file and
+        the <InlineMonoType darkMode>app/routes/notes</InlineMonoType> folder.
+      </Paragraph>
+      <Paragraph darkMode>
+        Let's change the login behaviour, so that users are taken to the{" "}
+        <InlineMonoType darkMode>/memberships</InlineMonoType> route instead
+        after signing in.
+      </Paragraph>
+      <Paragraph darkMode>
+        Change the code below in the{" "}
+        <InlineMonoType darkMode>action</InlineMonoType> function found in{" "}
+        <InlineMonoType darkMode>app/routes/login.tsx</InlineMonoType>:
+      </Paragraph>
+
+      <div className="mb-6 px-6">
+        <CodeBlock
+          snippet={redirectToMembershipsSnippet}
+          showLineNumbers
+          filePath="app/routes/login.tsx"
+          hideCopyButton
+          highlightAdditionalLines={[8]}
+          highlightSubtractedLines={[7]}
+        />
+      </div>
+
       <Heading isCentre level="h2">
         Add a logout button
       </Heading>
 
       <Paragraph darkMode>
-        Now let's add a logout button as well. Insert the code highlighted in
-        green just before your new login button:
+        Now let's add a logout button as well. Carefully insert the code
+        highlighted in green below:
       </Paragraph>
 
       <div className="mb-6">
@@ -80,7 +113,8 @@ const ConditionalRendering = () => {
           snippet={addLogoutButtonToNavbar}
           showLineNumbers
           filePath="app/components/Navbar/index.tsx"
-          highlightAdditionalLines={[8, 9, 10, 11, 12, 13, 14, 15]}
+          highlightAdditionalLines={[1, 11, 12, 13, 14, 15, 16, 17, 18]}
+          hideCopyButton
         />
       </div>
 
