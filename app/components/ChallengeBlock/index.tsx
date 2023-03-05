@@ -3,9 +3,13 @@ import Heading from "../Heading";
 
 interface ChallengeBlockProps {
   children: React.ReactNode;
+  title?: string;
 }
 
-const ChallengeBlock = ({ children }: ChallengeBlockProps) => {
+const ChallengeBlock = ({
+  children,
+  title = "Challenge",
+}: ChallengeBlockProps) => {
   return (
     <div className="relative mb-6 mt-12 border-l-4 border-l-green-300 bg-green-900 py-8 px-10">
       <div className="absolute -top-10 -left-11 flex h-20 w-20 items-center justify-center rounded-full bg-neutral-900">
@@ -14,7 +18,7 @@ const ChallengeBlock = ({ children }: ChallengeBlockProps) => {
         </div>
       </div>
       <Heading level="h2" className="mt-2 mb-6 text-4xl text-neutral-100">
-        Challenge
+        {title}
       </Heading>
       <div className="text-xl leading-relaxed tracking-wide text-neutral-100">
         {children}
