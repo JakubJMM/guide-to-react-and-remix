@@ -15,11 +15,11 @@ const NextLessonLink = ({
   return (
     <InternalStyledLink
       to={to}
-      className={`group flex items-center justify-end text-2xl ${className}`}
+      className={`group mb-6 flex items-center justify-end text-2xl ${className}`}
       darkMode
     >
       {children}
-      <ArrowRightCircle className="ml-4 group-hover:stroke-blue-400" />
+      <ArrowRightCircle className="ml-4 transition-all group-hover:scale-110 group-hover:stroke-blue-400" />
     </InternalStyledLink>
   );
 };
