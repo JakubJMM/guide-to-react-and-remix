@@ -8,7 +8,7 @@ const RevealAnswerButton = ({ onClick }: RevealAnswerButtonProps) => {
   return (
     <button
       type="button"
-      className="group flex w-full items-center justify-center text-3xl uppercase leading-relaxed tracking-wide text-purple-400 transition-all hover:scale-110 hover:text-purple-100"
+      className="group mb-6 flex w-full items-center justify-center text-3xl uppercase leading-relaxed tracking-wide text-purple-400 transition-all hover:scale-110 hover:text-purple-100"
       onClick={onClick}
     >
       <Eye
