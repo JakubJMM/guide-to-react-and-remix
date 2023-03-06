@@ -88,12 +88,12 @@ const InstallReactShareAnswer = () => {
           </Heading>
           <Paragraph challengeBlock>Can you add the following?</Paragraph>
           <ul className="ml-8">
-            <ListItem darkMode>
+            <ListItem challengeBlock>
               Add a horizontal row of buttons going to Facebook, Twitter and
               Pinterest
             </ListItem>
-            <ListItem darkMode>Make the buttons rounded</ListItem>
-            <ListItem darkMode>
+            <ListItem challengeBlock>Make the buttons rounded</ListItem>
+            <ListItem challengeBlock>
               Resize the actual icons - make them as big or small as you think
               looks good.
             </ListItem>
