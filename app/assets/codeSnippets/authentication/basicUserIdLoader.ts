@@ -9,4 +9,4 @@ export const loader = async ({ request }: LoaderArgs) => {
 };
 
 export default function Memberships() {
-  [...]`;
+  // [...rest of your code here...]`;

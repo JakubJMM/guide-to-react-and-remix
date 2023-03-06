@@ -3,6 +3,7 @@ import loginScreen from "~/assets/jpg/login-screen.jpg";
 import CodeBlock from "~/components/CodeBlock";
 import ExternalLink from "~/components/ExternalLink";
 import Heading from "~/components/Heading";
+import InfoBlock from "~/components/InfoBlock";
 import InlineMonoType from "~/components/InlineMonoType";
 import InternalStyledLink from "~/components/InternalStyledLink";
 import NextLessonLink from "~/components/NextLessonLink";
@@ -29,7 +30,7 @@ const RequireUserId = () => {
         <InlineMonoType darkMode>/memberships</InlineMonoType> page that we set
         up in a{" "}
         <InternalStyledLink
-          className="text-xl"
+          className="text-[1.5rem]"
           to="/remix/routing-in-remix/adding-a-new-page/add-a-route-file"
         >
           previous lesson
@@ -50,6 +51,7 @@ const RequireUserId = () => {
           filePath="app/routes/memberships.tsx"
           showLineNumbers
           highlightAdditionalLines={[1, 3, 4, 5, 6, 7, 8, 9]}
+          hideCopyButton
         />
       </div>
 
@@ -66,11 +68,9 @@ const RequireUserId = () => {
       <Paragraph darkMode>
         Try it yourself! After adding the code above to{" "}
         <InlineMonoType darkMode>app/routes/memberships.tsx</InlineMonoType>,
-        visit{" "}
-        <ExternalLink to="http://localhost:3000/memberships">
-          http://localhost:3000/memberships
-        </ExternalLink>{" "}
-        and if you are not already signed in, you'll see the login screen below:
+        visit the <InlineMonoType darkMode>/memberships</InlineMonoType> route
+        in your project, and if you are not already signed in, you'll see the
+        login screen below:
       </Paragraph>
 
       <div className="mb-6">
@@ -78,6 +78,13 @@ const RequireUserId = () => {
           src={loginScreen}
           alt="The Remix Indie Stack login screen"
         />
+      </div>
+
+      <div className="mb-10">
+        <InfoBlock title="Creating an account">
+          If you need to, click the 'Sign up' button to the bottom right of the
+          form to create an account for yourself here.
+        </InfoBlock>
       </div>
 
       <Paragraph darkMode>

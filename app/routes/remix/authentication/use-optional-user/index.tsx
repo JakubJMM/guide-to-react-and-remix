@@ -31,11 +31,11 @@ const UseOptionalUser = () => {
         that allows you to do just this. Let's use it now.
       </Paragraph>
 
-      <Heading isCentre level="h3">
+      <Heading isCentre level="h2">
         Updating the Navbar
       </Heading>
       <Paragraph darkMode>
-        Inside this project you will find a Navbar component at{" "}
+        You should have a Navbar component in your project at{" "}
         <InlineMonoType darkMode>
           app/components/Navbar/index.tsx
         </InlineMonoType>
@@ -53,7 +53,7 @@ const UseOptionalUser = () => {
           snippet={addUseOptionalUserToNavbar}
           showLineNumbers
           filePath="app/components/Navbar/index.tsx"
-          highlightAdditionalLines={[3, 4]}
+          highlightAdditionalLines={[1, 6, 7]}
         />
       </div>
 

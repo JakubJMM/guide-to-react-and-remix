@@ -1,4 +1,7 @@
-export const addUseOptionalUserToNavbar = `const Navbar = () => {
+export const addUseOptionalUserToNavbar = `import { useOptionalUser } from "~/utils";
+// [...other imports here...]
+
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const user = useOptionalUser();
   console.log({ user });
@@ -45,7 +48,7 @@ export async function action({ request }: ActionArgs) {
   const redirectTo = safeRedirect(formData.get("redirectTo"), "/notes");
   const redirectTo = safeRedirect(formData.get("redirectTo"), "/memberships");
   const remember = formData.get("remember");
-  
+
   // [...remaining code follows here...]`;
 
 export const addLogoutButtonToNavbar = `import { Form, Link } from "@remix-run/react";
