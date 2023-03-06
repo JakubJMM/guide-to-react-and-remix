@@ -20,7 +20,9 @@ const ReactShare = ({ children }: ReactShareProps) => {
 
   return (
     <>
-      <Heading level="h2">React Share</Heading>
+      <Heading isCentre level="h2">
+        React Share
+      </Heading>
       <Paragraph darkMode>
         It is common to share interesting content online with others using
         social media platforms like Twitter, Facebook and Instagram.

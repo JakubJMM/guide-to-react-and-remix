@@ -59,7 +59,7 @@ const Remix = () => {
         </aside>
       </div>
       <main className="col-span-9 h-full p-6">
-        <div className="rounded-md border border-neutral-700">
+        <div className="rounded-t-lg border border-neutral-700 bg-neutral-800">
           <Outlet />
         </div>
       </main>
