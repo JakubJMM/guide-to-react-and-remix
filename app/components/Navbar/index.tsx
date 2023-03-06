@@ -18,7 +18,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="bg-neutral-900 md:flex md:justify-between">
+    <header className="bg-neutral-900 lg:flex lg:justify-between">
       <div className="flex items-center justify-between px-4 py-3">
         <Link to="/">
           <FaLaptopCode color="#ffffff" size="4rem" />
@@ -28,7 +28,7 @@ const Navbar = () => {
       <div
         className={`px-2 pt-2 pb-4 ${
           isOpen ? "block" : "hidden"
-        } md:flex md:items-center`}
+        } lg:flex lg:items-center`}
       >
         <NavbarLink to="/your-first-component">
           <NavItemIcon>
