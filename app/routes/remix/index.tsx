@@ -9,7 +9,7 @@ function Remix() {
         </h1>
 
         <Smile
-          className="mx-auto mt-8 stroke-amber-200"
+          className="mx-auto mt-8 mb-24 stroke-white"
           size="8rem"
           strokeWidth={1}
         />
