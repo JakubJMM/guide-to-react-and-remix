@@ -81,7 +81,11 @@ const InstallReactFeatherAnswer = () => {
         <ExternalLink to="https://github.com/feathericons/react-feather#usage">
           Usage
         </ExternalLink>
-        . Read this carefully, then have a go at the challenge below:
+        .
+      </Paragraph>
+      <Paragraph darkMode>
+        Read the 'Usage' section carefully, then have a go at the challenge
+        below:
       </Paragraph>
 
       <div className="m-auto max-w-4xl">
