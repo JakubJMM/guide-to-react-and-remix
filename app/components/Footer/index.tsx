@@ -4,7 +4,7 @@ import NavItemIcon from "../Navbar/NavItemIcon";
 
 const Footer = () => {
   return (
-    <footer className="flex items-center justify-center bg-neutral-800 px-4 py-6">
+    <footer className="flex items-center justify-center bg-neutral-900 px-4 py-6">
       <NavItemIcon className="mr-12">
         <Link to="/">
           <FaLaptopCode className="h-auto w-12 fill-white" />

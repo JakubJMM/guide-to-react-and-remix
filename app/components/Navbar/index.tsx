@@ -18,7 +18,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="bg-neutral-800 md:flex md:justify-between">
+    <header className="bg-neutral-900 md:flex md:justify-between">
       <div className="flex items-center justify-between px-4 py-3">
         <Link to="/">
           <FaLaptopCode color="#ffffff" size="4rem" />
