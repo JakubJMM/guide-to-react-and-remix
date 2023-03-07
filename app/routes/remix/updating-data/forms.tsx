@@ -30,7 +30,7 @@ const Forms = () => {
       </InfoBlock>
       <Paragraph darkMode>
         Forms are the primary tool that users have to submit information on the
-        internet. This information is then used to update or create records in a
+        internet. Their information is used to update or create records in a
         database.
       </Paragraph>
 

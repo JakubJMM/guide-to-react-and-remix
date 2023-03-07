@@ -54,8 +54,9 @@ const UpdateUserMembership = ({ children }: UpdateUserMembershipProps) => {
             <InlineMonoType challengeBlock>membershipId</InlineMonoType>.
           </Paragraph>
           <Paragraph challengeBlock>
-            Using <InlineMonoType challengeBlock>prisma</InlineMonoType> it
-            grabs the <InlineMonoType challengeBlock>user</InlineMonoType> whose{" "}
+            Using <InlineMonoType challengeBlock>prisma</InlineMonoType>, it
+            grabs the first <InlineMonoType challengeBlock>user</InlineMonoType>{" "}
+            from the database whose{" "}
             <InlineMonoType challengeBlock>id</InlineMonoType> matches the{" "}
             <InlineMonoType challengeBlock>userId</InlineMonoType> being passed
             in.
@@ -72,9 +73,9 @@ const UpdateUserMembership = ({ children }: UpdateUserMembershipProps) => {
       </div>
 
       <Paragraph darkMode>
-        We now simply need to call this function from within the{" "}
-        <InlineMonoType challengeBlock>action</InlineMonoType> function coded in
-        the Memberships route file:
+        We now simply need to call this from within the{" "}
+        <InlineMonoType darkMode>action</InlineMonoType> function coded in{" "}
+        <InlineMonoType darkMode>app/routes/memberships.tsx</InlineMonoType>:
       </Paragraph>
 
       <div className="mb-6 px-6">
@@ -106,10 +107,13 @@ const UpdateUserMembership = ({ children }: UpdateUserMembershipProps) => {
       </div>
 
       <Paragraph darkMode>
-        Open up the <InlineMonoType darkMode>/memberships</InlineMonoType> route
-        in your browser and click one of the membership cards to select it. If
-        you refresh your browser page, the membership level selected will stay
-        the same.
+        Save your changes, then open up the{" "}
+        <InlineMonoType darkMode>/memberships</InlineMonoType> route in your
+        browser
+      </Paragraph>
+      <Paragraph darkMode>
+        Click one of the membership cards to select it. If you refresh your
+        browser page, the membership level selected should stay the same.
       </Paragraph>
       <Paragraph darkMode>
         Congratulations! The new membership level has saved to the database.

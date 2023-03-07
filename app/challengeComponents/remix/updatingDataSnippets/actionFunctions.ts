@@ -1,4 +1,9 @@
-export const addUseSubmitSnippet = `export default function Memberships() {
+export const addUseSubmitSnippet = `import { json, LoaderArgs } from "@remix-run/node";
+import { Form, useLoaderData, useSubmit } from "@remix-run/react";
+
+// [...other imports and loader function here...]
+
+export default function Memberships() {
   const { memberships } = useLoaderData<typeof loader>();
   const user = useUser();
   const submit = useSubmit();
@@ -21,7 +26,11 @@ export const addUseSubmitSnippet = `export default function Memberships() {
   );
 }`;
 
-export const addTestActionFunctionSnippet = `export const loader = async ({ request }: LoaderArgs) => {
+export const addTestActionFunctionSnippet = `import { ActionArgs, json, LoaderArgs } from "@remix-run/node";
+
+// [...lots of imports here...]
+
+export const loader = async ({ request }: LoaderArgs) => {
   await requireUserId(request);
 
   return json({ memberships: await getMemberships() });

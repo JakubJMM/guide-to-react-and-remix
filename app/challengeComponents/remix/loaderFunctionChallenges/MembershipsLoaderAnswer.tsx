@@ -46,8 +46,8 @@ const MembershipsLoaderAnswer = () => {
       </InfoBlock>
 
       <Paragraph darkMode>
-        Using this technique, it is easy to loading data into a Remix route and
-        display it to a user.
+        This technique makes it easy to load data into a Remix route and display
+        it to a user.
       </Paragraph>
       <Paragraph darkMode>
         In our next lesson, we will allow users to update their membership level

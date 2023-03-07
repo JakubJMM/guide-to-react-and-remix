@@ -21,8 +21,11 @@ const UpdatingComponents = () => {
         To make the <InlineMonoType darkMode>MembershipCard</InlineMonoType>{" "}
         work inside a <InlineMonoType darkMode>Form</InlineMonoType>, we need to
         update it's structure a little. Copy and paste the code below to replace
-        all your existing{" "}
-        <InlineMonoType darkMode>MembershipCard</InlineMonoType> code:
+        everything inside your{" "}
+        <InlineMonoType darkMode>
+          app/components/MembershipCard.tsx
+        </InlineMonoType>{" "}
+        file:
       </Paragraph>
 
       <div className="mb-6 px-6">
@@ -63,42 +66,43 @@ const UpdatingComponents = () => {
           <Paragraph challengeBlock>
             Let's take a look at each of the other properties used in this
             second <InlineMonoType challengeBlock>{"<input />"}</InlineMonoType>{" "}
-            element:
+            radio element:
           </Paragraph>
 
           <ul className="px-6">
             <ListItem challengeBlock>
               <InlineMonoType challengeBlock>name</InlineMonoType>: The browser
-              needs to know that each button is part of the same group, so that
-              when the user selects one option it can unselect the others. This
-              is done through the{" "}
+              needs some way of knowing that each radio button is part of the
+              same group. This way, when the user selects one option it can
+              unselect the others. This is done through the{" "}
               <InlineMonoType challengeBlock>name</InlineMonoType> prop. Each
-              radio button in a group should share the same{" "}
+              radio button in the same group should share the same{" "}
               <InlineMonoType challengeBlock>name</InlineMonoType>.
             </ListItem>
 
             <ListItem challengeBlock>
               <InlineMonoType challengeBlock>value</InlineMonoType> — Each radio
-              button has its own{" "}
-              <InlineMonoType challengeBlock>value</InlineMonoType>. This
-              property will be sent with the form when the option is selected.
-              This is the definition / meaning for each radio button.
+              button needs its own unique{" "}
+              <InlineMonoType challengeBlock>value</InlineMonoType>. The{" "}
+              <InlineMonoType challengeBlock>value</InlineMonoType> of the
+              selected radio button will be sent when the form is submitted.
             </ListItem>
 
             <ListItem challengeBlock>
-              <InlineMonoType challengeBlock>id</InlineMonoType> — this is
-              needed so that the{" "}
-              <InlineMonoType challengeBlock>{"<label>"}</InlineMonoType> can be
-              associated with the right input, so that clicking the label
-              focuses the input.
+              <InlineMonoType challengeBlock>id</InlineMonoType> — this links
+              the <InlineMonoType challengeBlock>{"<label>"}</InlineMonoType>{" "}
+              with it's corresponding{" "}
+              <InlineMonoType challengeBlock>{"<input />"}</InlineMonoType>, so
+              that when the user clicks the label in the browser it selects the
+              input at the same time.
             </ListItem>
 
             <ListItem challengeBlock>
               <InlineMonoType challengeBlock>defaultChecked</InlineMonoType>{" "}
               This is a <InlineMonoType challengeBlock>boolean</InlineMonoType>{" "}
-              value that decides if this particular radio button should be
-              selected when the component first renders. Can you work out what
-              it is checking for here?
+              value. If it is true, then this particular radio button should be
+              selected when the component first renders on the page. Can you
+              work out what it is checking for here?
             </ListItem>
           </ul>
         </InfoBlock>

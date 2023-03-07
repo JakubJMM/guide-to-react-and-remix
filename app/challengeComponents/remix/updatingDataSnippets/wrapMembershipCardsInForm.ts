@@ -17,16 +17,16 @@ export default function Memberships() {
         Memberships
       </h1>
       <Form method="post" onChange={(event) => handleChange(event)}>
-      <ul className="mx-auto max-w-xl p-4">
-        {memberships.map(({ level, description, price }) => (
-          <MembershipCard
-            key={level}
-            level={level}
-            description={description}
-            price={price}
-          />
-        ))}
-      </ul>
+        <ul className="mx-auto max-w-xl p-4">
+          {memberships.map(({ level, description, price }) => (
+            <MembershipCard
+              key={level}
+              level={level}
+              description={description}
+              price={price}
+            />
+          ))}
+        </ul>
       </Form>
     </div>
   );

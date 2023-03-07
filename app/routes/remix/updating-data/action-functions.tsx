@@ -52,13 +52,14 @@ const ActionFunctions = () => {
           filePath="app/routes/memberships.tsx"
           showLineNumbers
           hideCopyButton
-          highlightAdditionalLines={[4, 7]}
+          highlightAdditionalLines={[2, 9, 12]}
         />
       </div>
 
       <Paragraph darkMode>
-        Finally, we need to add our action function. Let's put this in between
-        our <InlineMonoType darkMode>loader</InlineMonoType> and{" "}
+        Finally, we need to add our{" "}
+        <InlineMonoType darkMode>action()</InlineMonoType> function. Let's put
+        this in between our <InlineMonoType darkMode>loader</InlineMonoType> and{" "}
         <InlineMonoType darkMode>Memberships</InlineMonoType> functions:
       </Paragraph>
 
@@ -68,7 +69,7 @@ const ActionFunctions = () => {
           filePath="app/routes/memberships.tsx"
           showLineNumbers
           hideCopyButton
-          highlightAdditionalLines={[7, 8, 9, 10, 11, 12, 13, 14, 15]}
+          highlightAdditionalLines={[1, 11, 12, 13, 14, 15, 16, 17, 18, 19]}
         />
       </div>
 
@@ -77,9 +78,11 @@ const ActionFunctions = () => {
           <Paragraph challengeBlock>
             Like <InlineMonoType challengeBlock>loader</InlineMonoType>{" "}
             functions, <InlineMonoType challengeBlock>action</InlineMonoType>{" "}
-            functions are executed on the server only. Remix calls actions
-            before loaders, so if a non-GET request is made to your route (POST,
-            PUT, PATCH, DELETE) then the{" "}
+            functions are executed on the server only.
+          </Paragraph>
+          <Paragraph challengeBlock>
+            Remix calls actions before loaders, so if a non-GET request is made
+            to your route (POST, PUT, PATCH, DELETE) then the{" "}
             <InlineMonoType challengeBlock>action</InlineMonoType> is called
             first.
           </Paragraph>
@@ -93,7 +96,7 @@ const ActionFunctions = () => {
           </Paragraph>
 
           <Paragraph challengeBlock>
-            After saving your changes above, open the{" "}
+            After saving your changes, open the{" "}
             <InlineMonoType challengeBlock>/memberships</InlineMonoType> route
             in your browser and click to select a membership level.
           </Paragraph>
@@ -105,11 +108,24 @@ const ActionFunctions = () => {
             into your VS Code terminal:
           </Paragraph>
 
-          <Screenshot
-            challengeBlock
-            src={actionFunctionConsoleLog}
-            alt="Logging to the console from an action function"
-          />
+          <div className="mb-6">
+            <Screenshot
+              challengeBlock
+              src={actionFunctionConsoleLog}
+              alt="Logging to the console from an action function"
+            />
+          </div>
+
+          <div className="bg-black bg-opacity-20 p-6">
+            <Paragraph className="mb-0" challengeBlock>
+              Remember -{" "}
+              <em className="italic">
+                you won't see this in your browser console
+              </em>{" "}
+              because action functions are only executed on the server. You will
+              need to check the VS Code terminal to see this data being logged.
+            </Paragraph>
+          </div>
         </InfoBlock>
       </div>
 
