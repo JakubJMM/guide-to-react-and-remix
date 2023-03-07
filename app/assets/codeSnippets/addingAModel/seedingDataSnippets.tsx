@@ -80,34 +80,48 @@ export const basicMembershipSeedSnippet = `async function seed() {
   // [...but keep it in your original!...];
 }`;
 
-export const addAllMembershipsSnippet = `const intermediateMembership = await prisma.membership.create({
-  data: {
-    level: "Intermediate",
-    description: "1 martial art - 3 sessions per week). Monthly fee",
-    price: "£35.00",
-  },
-});
-await prisma.membership.create({
-  data: {
-    level: "Advanced",
-    description: "Any 2 martial arts - 5 sessions per week). Monthly fee",
-    price: "£45.00",
-  },
-});
-await prisma.membership.create({
-  data: {
-    level: "Elite",
-    description: "Unlimited classes. Monthly fee",
-    price: "£60.00",
-  },
-});
-await prisma.membership.create({
-  data: {
-    level: "Junior",
-    description: "Can attend all-kids martial arts sessions. Monthly fee",
-    price: "£25.00",
-  },
-});`;
+export const addAllMembershipsSnippet = `async function seed() {
+  // Delete any Membership records from previous seeds
+  await prisma.membership.deleteMany({});
+
+  // Create new Membership records
+  const basicMembership = await prisma.membership.create({
+    data: {
+      level: "Basic",
+      description: "1 martial art - 2 sessions per week. Monthly fee.",
+      price: "£25.00",
+    },
+  });
+  const intermediateMembership = await prisma.membership.create({
+    data: {
+      level: "Intermediate",
+      description: "1 martial art - 3 sessions per week). Monthly fee",
+      price: "£35.00",
+    },
+  });
+  await prisma.membership.create({
+    data: {
+      level: "Advanced",
+      description: "Any 2 martial arts - 5 sessions per week). Monthly fee",
+      price: "£45.00",
+    },
+  });
+  await prisma.membership.create({
+    data: {
+      level: "Elite",
+      description: "Unlimited classes. Monthly fee",
+      price: "£60.00",
+    },
+  });
+  await prisma.membership.create({
+    data: {
+      level: "Junior",
+      description: "Can attend all-kids martial arts sessions. Monthly fee",
+      price: "£25.00",
+    },
+  });
+
+  // [...rest of seed code here...']`;
 
 export const originalCreateUsersAndNotesSnippet = `const hashedPassword = await bcrypt.hash("racheliscool", 10);
 

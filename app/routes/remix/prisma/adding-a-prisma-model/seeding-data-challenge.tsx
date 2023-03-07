@@ -28,6 +28,7 @@ const SeedingDataChallenge = () => {
         <InlineMonoType darkMode>Membership</InlineMonoType> model that we added
         previously:
       </Paragraph>
+
       <div className="my-6">
         <CodeBlock
           snippet={newMemberShipSnippet}
@@ -35,22 +36,23 @@ const SeedingDataChallenge = () => {
           language="prisma"
         />
       </div>
+
       <ChallengeBlock>
         <Paragraph className="text-neutral-100" darkMode>
           Looking at the other seed data in{" "}
           <InlineMonoType className="bg-neutral-900 bg-opacity-50" darkMode>
             prisma/schema.prisma
           </InlineMonoType>
-          , have a go at writing your own seed for the 'Basic' level of
-          membership in the same file:
+          , have a go at writing your own seed that will create a 'Basic' level
+          of membership:
         </Paragraph>
         <ol className="mx-4 my-6 rounded bg-neutral-900 bg-opacity-50 p-6">
-          <ListItem className="ml-8" darkMode>
+          <ListItem className="ml-8" challengeBlock>
             Basic: 1 martial art - 2 sessions per week. Monthly fee. £25.00
           </ListItem>
         </ol>
         <Paragraph className="text-neutral-100" darkMode>
-          When you are ready, compare your solution with the one below:
+          When you are ready, compare your solution with the one below...
         </Paragraph>
       </ChallengeBlock>
 

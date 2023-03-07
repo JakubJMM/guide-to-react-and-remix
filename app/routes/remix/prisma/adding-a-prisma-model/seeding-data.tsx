@@ -69,25 +69,31 @@ const SeedingData = () => {
             After importing the packages needed at the top of the file, an
             instance of the Prisma client is instantiated:
           </Paragraph>
+
           <div className="my-6">
             <CodeBlock
               snippet={`const prisma = new PrismaClient();`}
               showLineNumbers
               filePath="prisma/seed.ts"
+              hideCopyButton
             />
           </div>
+
           <Paragraph darkMode>
             After this, we then create a new function called{" "}
             <InlineMonoType darkMode>seed</InlineMonoType>, and create the
             attributes required for our new user:
           </Paragraph>
+
           <div className="my-6">
             <CodeBlock
               snippet={creatingUserAttributesSnippet}
               showLineNumbers
               filePath="prisma/seed.ts"
+              hideCopyButton
             />
           </div>
+
           <Paragraph darkMode>
             This creates an <InlineMonoType darkMode>email</InlineMonoType>{" "}
             address for the user, deletes any users that might have the same
@@ -102,19 +108,22 @@ const SeedingData = () => {
             <InlineMonoType darkMode>User</InlineMonoType> table via Prisma's{" "}
             <InlineMonoType darkMode>create</InlineMonoType> method:
           </Paragraph>
+
           <div className="my-6">
             <CodeBlock
               snippet={originalPrismaCreateUserSnippet}
               showLineNumbers
               filePath="prisma/seed.ts"
+              hideCopyButton
             />
           </div>
+
           <Paragraph darkMode>
             Let's have a go at adding some seed data for the new{" "}
             <InlineMonoType darkMode>Membership</InlineMonoType> model in our{" "}
             <InternalStyledLink
               to="/remix/prisma/adding-a-prisma-model/seeding-data-challenge"
-              className="text-2xl"
+              className="text-[1.5rem]"
             >
               next step
             </InternalStyledLink>

@@ -12,6 +12,7 @@ interface CodeBlockProps {
   hideCopyButton?: boolean;
   highlightAdditionalLines?: number[];
   highlightSubtractedLines?: number[];
+  highlightInfoLines?: number[];
 }
 
 const CodeBlock = ({
@@ -22,6 +23,7 @@ const CodeBlock = ({
   hideCopyButton = false,
   highlightAdditionalLines,
   highlightSubtractedLines,
+  highlightInfoLines,
 }: CodeBlockProps) => {
   const [isCopied, setIsCopied] = useState(false);
 
@@ -98,6 +100,18 @@ const CodeBlock = ({
               if (highlightLineNumber === lineNumber) {
                 style.backgroundColor = "rgba(127, 29, 29, 0.5)";
                 style.borderLeft = "4px solid rgb(239 68 68)";
+                style.position = "relative";
+                style.left = "-4px";
+              }
+
+              return { style };
+            });
+          }
+          if (highlightInfoLines && highlightInfoLines.length > 0) {
+            highlightInfoLines.forEach((highlightLineNumber) => {
+              if (highlightLineNumber === lineNumber) {
+                style.backgroundColor = "rgba(76, 29, 149, 0.5)";
+                style.borderLeft = "4px solid rgb(124, 58, 237)";
                 style.position = "relative";
                 style.left = "-4px";
               }

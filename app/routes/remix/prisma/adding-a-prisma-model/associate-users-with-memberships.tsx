@@ -23,14 +23,16 @@ const AssociateUsersWithMemberships = () => {
         Finally, we need to associate users with memberships. Remind yourself
         how users and notes are currently being seeded:
       </Paragraph>
+
       <div className="my-6">
         <CodeBlock
           filePath="prisma/seed.ts"
           showLineNumbers
           snippet={originalCreateUsersAndNotesSnippet}
-          highlightAdditionalLines={[18, 26]}
+          highlightInfoLines={[18, 26]}
         />
       </div>
+
       <Paragraph darkMode>
         Can you see where notes are being associated with a user here via{" "}
         <InlineMonoType darkMode>userId: user.id</InlineMonoType>?
@@ -44,47 +46,71 @@ const AssociateUsersWithMemberships = () => {
       </Paragraph>
 
       <ChallengeBlock>
-        <Paragraph darkMode className="text-neutral-50">
+        <Paragraph challengeBlock className="text-neutral-50">
           Just as a{" "}
-          <InlineMonoType darkMode className="bg-neutral-900 bg-opacity-50">
+          <InlineMonoType
+            challengeBlock
+            className="bg-neutral-900 bg-opacity-50"
+          >
             Note
           </InlineMonoType>{" "}
           can only be associated with one{" "}
-          <InlineMonoType darkMode className="bg-neutral-900 bg-opacity-50">
+          <InlineMonoType
+            challengeBlock
+            className="bg-neutral-900 bg-opacity-50"
+          >
             User
           </InlineMonoType>
           , so a{" "}
-          <InlineMonoType darkMode className="bg-neutral-900 bg-opacity-50">
+          <InlineMonoType
+            challengeBlock
+            className="bg-neutral-900 bg-opacity-50"
+          >
             User
           </InlineMonoType>{" "}
           can only be associated with one{" "}
-          <InlineMonoType darkMode className="bg-neutral-900 bg-opacity-50">
+          <InlineMonoType
+            challengeBlock
+            className="bg-neutral-900 bg-opacity-50"
+          >
             Membership
           </InlineMonoType>
           .
         </Paragraph>
-        <Paragraph darkMode className="text-neutral-50">
+        <Paragraph challengeBlock className="text-neutral-50">
           Can you seed a new{" "}
-          <InlineMonoType darkMode className="bg-neutral-900 bg-opacity-50">
+          <InlineMonoType
+            challengeBlock
+            className="bg-neutral-900 bg-opacity-50"
+          >
             User
           </InlineMonoType>{" "}
           that:
         </Paragraph>
 
         <ol className="rounded bg-neutral-900 bg-opacity-50 p-6">
-          <ListItem darkMode className="ml-8 text-neutral-50">
+          <ListItem challengeBlock className="ml-8 text-neutral-50">
             Uses the same{" "}
-            <InlineMonoType darkMode className="bg-neutral-900 bg-opacity-50">
+            <InlineMonoType
+              challengeBlock
+              className="bg-neutral-900 bg-opacity-50"
+            >
               hashedPassword
             </InlineMonoType>{" "}
             as the currently seeded{" "}
-            <InlineMonoType darkMode className="bg-neutral-900 bg-opacity-50">
+            <InlineMonoType
+              challengeBlock
+              className="bg-neutral-900 bg-opacity-50"
+            >
               user
             </InlineMonoType>
           </ListItem>
-          <ListItem darkMode className="ml-8 text-neutral-50">
+          <ListItem challengeBlock className="ml-8 text-neutral-50">
             Is associated with the basic level of{" "}
-            <InlineMonoType darkMode className="bg-neutral-900 bg-opacity-50">
+            <InlineMonoType
+              challengeBlock
+              className="bg-neutral-900 bg-opacity-50"
+            >
               Membership
             </InlineMonoType>
             ?

@@ -33,6 +33,7 @@ const AssociateUsersAndMemberships = () => {
           showLineNumbers
           filePath="prisma/seed.ts"
           snippet={basicMembershipSeed}
+          hideCopyButton
         />
       </div>
 
@@ -51,11 +52,11 @@ const AssociateUsersAndMemberships = () => {
 
       <ChallengeBlock>
         <Paragraph darkMode className="text-neutral-50">
-          Can you write the code to seed one{" "}
+          Can you write the code to seed another{" "}
           <InlineMonoType darkMode className="bg-neutral-900 bg-opacity-50">
             User
           </InlineMonoType>{" "}
-          for the intermediate membership level?
+          with the intermediate membership level?
         </Paragraph>
       </ChallengeBlock>
 

@@ -30,8 +30,15 @@ const AssociateMultipleUsersWithMemberships = () => {
       </div>
 
       <Paragraph darkMode>
-        And we are finished! Well done on creating a brand new Membership model,
-        and seeding some data that links users and memberships together.
+        Remember to save your file, then run{" "}
+        <InlineMonoType darkMode>npx prisma db seed</InlineMonoType> to update
+        your database with the seed changes.
+      </Paragraph>
+
+      <Paragraph darkMode>
+        And we are finished! Well done on creating a brand new{" "}
+        <InlineMonoType darkMode>Membership</InlineMonoType> model, and seeding
+        some data that links users and memberships together.
       </Paragraph>
 
       <Paragraph darkMode>

@@ -34,9 +34,8 @@ export default function CreatingATable() {
       <Paragraph darkMode>
         We will also need to update the{" "}
         <InlineMonoType darkMode>User</InlineMonoType> model towards the top of
-        the file on line 10. Replace your existing{" "}
-        <InlineMonoType darkMode>User</InlineMonoType> model code with that
-        shown below:
+        the file on line 10. Add the lines of code shown below to your{" "}
+        <InlineMonoType darkMode>User</InlineMonoType> model in the same file:
       </Paragraph>
 
       <div className="my-6">
@@ -46,6 +45,7 @@ export default function CreatingATable() {
           showLineNumbers={true}
           snippet={updatedUserModelSnippet}
           highlightAdditionalLines={[10, 11]}
+          hideCopyButton
         />
       </div>
 
