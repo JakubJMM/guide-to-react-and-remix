@@ -16,6 +16,23 @@ const RequireUserId = () => {
       <Heading isCentre level="h2">
         Require User Id
       </Heading>
+      <div className="mb-6">
+        <InfoBlock title="Previous learning">
+          <Paragraph challengeBlock>
+            Before starting this lesson, you should already have a{" "}
+            <InlineMonoType challengeBlock>/memberships</InlineMonoType> page in
+            your project that we set up in{" "}
+            <InternalStyledLink
+              challengeBlock
+              className="text-[1.5rem]"
+              to="/remix/routing-in-remix/adding-a-new-page/add-a-route-file"
+            >
+              this lesson
+            </InternalStyledLink>
+            .
+          </Paragraph>
+        </InfoBlock>
+      </div>
       <Paragraph darkMode>
         Authentication is the process of checking that a user is who they say
         they are. This is commonly done by requiring a username and password
