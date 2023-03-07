@@ -62,7 +62,7 @@ const Remix = () => {
                   <SidebarLink to="authentication/require-user-id">
                     Protecting Routes with Authentication
                   </SidebarLink>
-                  <SidebarLink to="prisma/adding-a-prisma-model">
+                  <SidebarLink to="/remix/prisma/adding-a-prisma-model/creating-a-table">
                     Adding a Prisma model
                   </SidebarLink>
                   <SidebarLink to="loading-data/prisma-getter-functions">

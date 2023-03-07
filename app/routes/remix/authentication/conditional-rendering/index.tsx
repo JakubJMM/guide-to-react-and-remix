@@ -30,8 +30,12 @@ const ConditionalRendering = () => {
         Conditional Rendering - add a login button
       </Heading>
       <Paragraph darkMode>
-        First, lets add a <InlineMonoType darkMode>Link</InlineMonoType> button
-        to the end of our <InlineMonoType darkMode>NavBar</InlineMonoType>:
+        First, lets replace the current dummy 'Login' link at the end of our{" "}
+        <InlineMonoType darkMode>NavBar</InlineMonoType> with one that really
+        works.
+      </Paragraph>
+      <Paragraph darkMode>
+        Delete the line highlighted in red and add the code shown in green.
       </Paragraph>
 
       <div className="mb-6">
@@ -39,7 +43,8 @@ const ConditionalRendering = () => {
           snippet={addLoginButtonToNavbar}
           showLineNumbers
           filePath="app/components/Navbar/index.tsx"
-          highlightAdditionalLines={[13, 14, 15, 16, 17, 18, 19]}
+          highlightAdditionalLines={[1, 12, 13, 14, 15, 16, 17, 18]}
+          highlightSubtractedLines={[11]}
           hideCopyButton
         />
       </div>
@@ -83,8 +88,7 @@ const ConditionalRendering = () => {
         after signing in.
       </Paragraph>
       <Paragraph darkMode>
-        Change the code below in the{" "}
-        <InlineMonoType darkMode>action</InlineMonoType> function found in{" "}
+        Change the code below in{" "}
         <InlineMonoType darkMode>app/routes/login.tsx</InlineMonoType>:
       </Paragraph>
 
@@ -94,8 +98,8 @@ const ConditionalRendering = () => {
           showLineNumbers
           filePath="app/routes/login.tsx"
           hideCopyButton
-          highlightAdditionalLines={[8]}
-          highlightSubtractedLines={[7]}
+          highlightSubtractedLines={[7, 15]}
+          highlightAdditionalLines={[8, 16]}
         />
       </div>
 
@@ -121,13 +125,13 @@ const ConditionalRendering = () => {
       <div className="mx-auto lg:max-w-4xl">
         <InfoBlock title="What is this doing?">
           <Paragraph challengeBlock>
-            You'll notice our logout button is actually nested inside Remix's
+            You'll notice our logout button is nested inside Remix's
             <InlineMonoType challengeBlock>Form</InlineMonoType> component.
           </Paragraph>
           <Paragraph challengeBlock>
-            This is because logging out is done over HTTP, and requires a{" "}
-            <InlineMonoType challengeBlock>POST</InlineMonoType> action that can
-            only be generated through a HTML form.
+            This is because logging out is actually a{" "}
+            <InlineMonoType challengeBlock>POST</InlineMonoType> action done
+            over HTTP, and this can only be generated through a HTML form.
           </Paragraph>
         </InfoBlock>
       </div>
@@ -144,9 +148,7 @@ const ConditionalRendering = () => {
         />
       </div>
 
-      <Heading level="h2">Show one button or the other?</Heading>
-
-      <ChallengeBlock>
+      <ChallengeBlock title="Show one button or the other?">
         <Paragraph challengeBlock>
           We definitely don't want both buttons to show at the same time.
         </Paragraph>

@@ -43,9 +43,9 @@ const UseOptionalUser = () => {
         of every screen.
       </Paragraph>
       <Paragraph darkMode>
-        Let's add the <InlineMonoType darkMode>useOptionUser()</InlineMonoType>{" "}
-        hook into the <InlineMonoType darkMode>Navbar</InlineMonoType>{" "}
-        component:
+        Let's add the{" "}
+        <InlineMonoType darkMode>useOptionalUser()</InlineMonoType> hook into
+        the <InlineMonoType darkMode>Navbar</InlineMonoType> component:
       </Paragraph>
 
       <div className="mb-6">
@@ -54,6 +54,7 @@ const UseOptionalUser = () => {
           showLineNumbers
           filePath="app/components/Navbar/index.tsx"
           highlightAdditionalLines={[1, 6, 7]}
+          hideCopyButton
         />
       </div>
 
@@ -87,7 +88,6 @@ const UseOptionalUser = () => {
         <InlineMonoType darkMode>user</InlineMonoType> object in the console at
         the bottom of your window.
       </Paragraph>
-
       <Paragraph darkMode>
         If you are not logged in, the{" "}
         <InlineMonoType darkMode>user</InlineMonoType> will show as{" "}

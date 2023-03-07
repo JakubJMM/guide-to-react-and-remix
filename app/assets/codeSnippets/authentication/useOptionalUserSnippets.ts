@@ -15,18 +15,17 @@ const Navbar = () => {
 
 export default Navbar;`;
 
-export const addLoginButtonToNavbar = `const Navbar = () => {
+export const addLoginButtonToNavbar = `import { Link } from "@remix-run/react";
+// [...other imports here...]
+
+const Navbar = () => {
   // [...omitted code here...]
 
   return (
     <header className="bg-neutral-800 md:flex md:justify-between">
         {/* [...lots of links to different pages...] */}
-        <NavbarLink to="/remix">
-          <NavItemIcon>
-            <img src={remixIcon} className="h-auto w-3" alt="Remix icon" />
-          </NavItemIcon>
-          Remix
-        </NavbarLink>
+        <NavbarLink url="#">Membership</NavbarLink>
+        <NavbarLink url="#">Login</NavbarLink>
         <Link
           to="/login"
           type="button"
@@ -37,7 +36,9 @@ export const addLoginButtonToNavbar = `const Navbar = () => {
       </div>
     </header>
   );
-};`;
+};
+
+export default Navbar;`;
 
 export const redirectToMembershipsSnippet = `// [...lots of imports and a loader function here...]
 
@@ -49,7 +50,15 @@ export async function action({ request }: ActionArgs) {
   const redirectTo = safeRedirect(formData.get("redirectTo"), "/memberships");
   const remember = formData.get("remember");
 
-  // [...remaining code follows here...]`;
+  // [...more code here...]
+
+  export default function LoginPage() {
+    const [searchParams] = useSearchParams();
+    const redirectTo = searchParams.get("redirectTo") || "/notes";
+    const redirectTo = searchParams.get("redirectTo") || "/memberships";
+    const actionData = useActionData<typeof action>();
+
+    // [...remaining component code here...]`;
 
 export const addLogoutButtonToNavbar = `import { Form, Link } from "@remix-run/react";
 // [...lots of other imports here...]

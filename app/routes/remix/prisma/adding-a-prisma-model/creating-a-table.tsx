@@ -1,5 +1,3 @@
-import { json, LoaderArgs } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import {
   newMemberShipSnippet,
@@ -10,21 +8,8 @@ import Heading from "~/components/Heading";
 import InlineMonoType from "~/components/InlineMonoType";
 import InternalStyledLink from "~/components/InternalStyledLink";
 import Paragraph from "~/components/Paragraph";
-import { requireUserId } from "~/session.server";
-import { useUser } from "~/utils";
-
-export async function loader({ request }: LoaderArgs) {
-  const userId = await requireUserId(request);
-
-  return json({ userId });
-}
 
 export default function CreatingATable() {
-  const data = useLoaderData<typeof loader>();
-  const user = useUser();
-
-  console.log({ user });
-
   return (
     <div>
       <Heading level="h2" className={`mt-12 text-left text-2xl font-bold`}>
