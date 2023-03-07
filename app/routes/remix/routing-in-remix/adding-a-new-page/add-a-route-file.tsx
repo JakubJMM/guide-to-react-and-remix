@@ -1,9 +1,8 @@
 import { Link } from "@remix-run/react";
-import addMembershipsRouteImage from "~/assets/add-memberships-route.png";
 import { basicMembershipSnippet } from "~/assets/codeSnippets/addMembershipsRoute/membershipRouteSnippets";
+import addMembershipsRouteImage from "~/assets/jpg/add-memberships-route.jpg";
 import membershipsStartPage from "~/assets/jpg/membership-page-start.jpg";
 import CodeBlock from "~/components/CodeBlock";
-import ExternalLink from "~/components/ExternalLink";
 import Heading from "~/components/Heading";
 import InlineMonoType from "~/components/InlineMonoType";
 import NextLessonLink from "~/components/NextLessonLink";
@@ -70,10 +69,10 @@ const AddARouteFile = () => {
       <Paragraph darkMode>
         Save your file, start your server with{" "}
         <InlineMonoType darkMode>npm run dev</InlineMonoType> and head over to{" "}
-        <ExternalLink to="http://localhost:3000/memberships">
+        <InlineMonoType darkMode>
           http://localhost:3000/memberships
-        </ExternalLink>
-        . You should see the page below:
+        </InlineMonoType>{" "}
+        in your project. You should see the page below:
       </Paragraph>
       <div className="my-6">
         <Screenshot

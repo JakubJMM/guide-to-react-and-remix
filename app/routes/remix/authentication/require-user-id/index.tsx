@@ -1,7 +1,7 @@
 import { basicUserIdLoader } from "~/assets/codeSnippets/authentication/basicUserIdLoader";
+import loginScreenSignUpLink from "~/assets/jpg/login-screen-sign-up-link.jpg";
 import loginScreen from "~/assets/jpg/login-screen.jpg";
 import CodeBlock from "~/components/CodeBlock";
-import ExternalLink from "~/components/ExternalLink";
 import Heading from "~/components/Heading";
 import InfoBlock from "~/components/InfoBlock";
 import InlineMonoType from "~/components/InlineMonoType";
@@ -82,14 +82,21 @@ const RequireUserId = () => {
 
       <div className="mb-10">
         <InfoBlock title="Creating an account">
-          If you need to, click the 'Sign up' button to the bottom right of the
-          form to create an account for yourself here.
+          <Paragraph challengeBlock>
+            If you need to, click the 'Sign up' button to the bottom right of
+            the form to create an account for yourself:
+          </Paragraph>
+          <Screenshot
+            challengeBlock
+            src={loginScreenSignUpLink}
+            alt="The login screen sign-up link"
+          />
         </InfoBlock>
       </div>
 
       <Paragraph darkMode>
-        Great! So if you want a user to be signed in before they can access a
-        particular route, just add the code above to it.
+        Great! So now if you want a user to be signed in before they can access
+        a particular route, just add the code above to it.
       </Paragraph>
       <Paragraph darkMode>
         Next, let's see how we can handle pages that are open to everyone, but
