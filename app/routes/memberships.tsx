@@ -1,3 +1,12 @@
+import { LoaderArgs } from "@remix-run/node";
+import { requireUserId } from "~/session.server";
+
+export const loader = async ({ request }: LoaderArgs) => {
+  await requireUserId(request);
+
+  return null;
+};
+
 export default function Memberships() {
   return (
     <div className="min-h-screen bg-amber-200 p-4">
@@ -65,4 +74,5 @@ export default function Memberships() {
       </ul>
     </div>
   );
-}
+
+  }
